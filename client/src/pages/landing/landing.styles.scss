@@ -1,0 +1,21 @@
+.landing-first-container{
+    padding: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+
+    .landing-first-content-left{
+        display: flex;
+        flex: 1;
+        align-items: flex-start;
+        justify-content: center;
+
+        h1{
+            color: #466AFF;
+            font-size: 70px;
+        }
+    }
+}

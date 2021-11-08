@@ -1,0 +1,238 @@
+/** @format */
+
+.terrain-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.terrain-contents {
+  padding: 2% 12%;
+  height: 100%;
+  padding-bottom: 6%;
+}
+.terrain-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+    color: #271aba;
+  }
+  p {
+    padding: 0 0.6rem;
+    width: 100%;
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+}
+.terrain-body {
+  width: 100%;
+  margin: 9% 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  right: 3rem;
+  .terrain-body-item {
+    width: 290px;
+    height: 250px;
+    margin: 0 4%;
+    position: relative;
+    .bg-no {
+      position: absolute;
+      width: 160%;
+      height: 160%;
+      right: -12rem;
+      top: -8rem;
+      img {
+        width: 100%;
+        height: 130%;
+        object-fit: contain;
+      }
+    }
+    &::after {
+      position: absolute;
+      content: "- - - - - - - - - - - - ";
+      top: 70%;
+      right: -10rem;
+      transform: translateY(-50%);
+      width: 10rem;
+      height: 0;
+      background-color: black;
+    }
+    p {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    .terrain-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .terrain-body-item:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+.terrain-footer {
+  width: 80%;
+  margin: 20% auto 3%;
+
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .terrain-footer-contents {
+    width: 300px;
+    height: 320px;
+    padding: 0.8rem;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='blue' stroke-width='5' stroke-dasharray='15' stroke-dashoffset='10' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 30px;
+    position: relative;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.089);
+    .label-no {
+      position: absolute;
+      top: -1.2rem;
+      left: -2rem;
+      content: "01";
+      width: 50px;
+      height: 50px;
+      background-color: #271aba;
+      color: white;
+      display: grid;
+      place-content: center;
+      border-radius: 50%;
+      z-index: -5;
+    }
+    label {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+
+      .upload-icon {
+        font-size: 5rem;
+        color: #271aba;
+      }
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+      }
+      span {
+        font-size: 0.92rem;
+        padding: 0 1.2rem;
+        text-align: center;
+        word-wrap: break-word;
+      }
+      .file-details {
+        color: red;
+        width: 90%;
+        margin-top: 0.2rem;
+        word-wrap: break-word;
+      }
+    }
+
+    #uploadfile {
+      width: 0;
+      height: 0;
+    }
+  }
+  .footer-2 {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      margin: 0.5rem 0 0.8rem;
+      margin-top: 0.3rem;
+      font-size: 1.3rem;
+      color: #271aba;
+      font-weight: 500;
+    }
+    input,
+    textarea {
+      font-family: "Poppins", sans-serif;
+      padding: 0.38rem 0.8rem;
+      border-radius: 15px;
+      border: 1px solid #271aba;
+      margin: 0.5rem 0;
+      outline: 0;
+      width: 78%;
+      &::placeholder {
+        color: rgb(158, 158, 158);
+      }
+    }
+    .form-errors {
+      font-size: 0.8rem;
+      color: rgb(255, 0, 0);
+      font-weight: 400;
+    }
+    button {
+      font-family: "Poppins", sans-serif;
+      display: block;
+      width: 7rem;
+      margin: 0.6rem auto 0.2rem;
+      padding: 0.3rem 0.7rem;
+      background-color: #271aba;
+      border: 0;
+      border: 2px solid #271aba00;
+
+      color: white;
+
+      outline: 0;
+      border-radius: 20px;
+      cursor: pointer;
+      position: relative;
+      z-index: 100;
+      &:hover {
+        border: 2px solid #271aba;
+        background: transparent;
+        color: black;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1600px) {
+  .terrain-contents {
+    padding: 2% 5%;
+    height: 100%;
+    padding-bottom: 6%;
+  }
+  .terrain-header {
+    h2 {
+      font-size: 2.9rem;
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .terrain-contents {
+    padding: 2% 2%;
+    height: 100%;
+    padding-bottom: 6%;
+  }
+  .terrain-footer {
+    .terrain-footer-contents {
+      width: 280px;
+      height: 300px;
+      padding: 1rem;
+    }
+  }
+}
