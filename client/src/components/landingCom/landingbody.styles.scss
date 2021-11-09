@@ -1,0 +1,133 @@
+/** @format */
+
+.landing-body {
+  padding: 14% 5% 11%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.landing-body-left {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  h2 {
+    position: absolute;
+    top: -7rem;
+    left: 1rem;
+    font-size: 2.5rem;
+  }
+  .landing-body-box {
+    width: 320px;
+    height: auto;
+    position: relative;
+    margin: 2.5rem 1rem;
+    padding: 0.6rem;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0.2rem;
+      width: 6rem;
+      background-color: #271aba;
+      content: "";
+    }
+    p {
+      margin-top: 0.8rem;
+      margin-bottom: 0.9rem;
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+    span {
+      opacity: 0.8;
+    }
+  }
+}
+.landing-footer {
+  padding: 12% 5%;
+  background-color: rgb(246, 248, 252);
+  margin-bottom: 5%;
+  position: relative;
+  .p-blog {
+    display: inline;
+    padding: 0.1rem 1.5rem 0.2rem;
+    font-size: 1.4rem;
+    background-color: #271aba;
+    color: white;
+    letter-spacing: 0.8px;
+    border-radius: 40px;
+    position: absolute;
+    top: -1rem;
+    left: 3rem;
+    margin: 0;
+  }
+}
+.landing-footer-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.landing-footer-box {
+  width: 38rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 1rem;
+  img {
+    width: 230px;
+    height: 230px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .landing-footer-text {
+    margin-left: 3%;
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0.1rem;
+      font-size: 1.6rem;
+    }
+    .footer-date {
+      font-style: italic;
+      display: block;
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem;
+    }
+    a {
+      padding: 0.2rem 1rem;
+      background-color: #271abae3;
+      border-radius: 30px;
+      color: white;
+
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+  }
+}
+@media screen and (max-width: 1600px) {
+  .landing-footer {
+    padding: 12% 1%;
+  }
+  .landing-footer-contents {
+    padding: 5% 0%;
+    justify-content: center;
+  }
+  .landing-footer-box {
+    width: 35rem;
+
+    margin: 0rem 2rem;
+    .landing-footer-text {
+      h2 {
+        margin-top: 0rem;
+        margin-bottom: 0.9rem;
+        font-size: 1.6rem;
+      }
+      .footer-date {
+        margin-bottom: 0.4rem;
+      }
+      span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
