@@ -1,18 +1,38 @@
 /** @format */
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./terrain.styles.scss";
 import { FiUploadCloud } from "react-icons/fi";
 import validator from "validator";
 import Api from "../../api/Api";
+
+// import S3 from "aws-s3";
+
+const bucketName = "lyso-docs";
+const bucketRegion = "ap-south-1";
+
+window.AWS.config.update({
+  region: bucketRegion,
+  credentials: new window.AWS.CognitoIdentityCredentials({
+    IdentityPoolId: "",
+  }),
+});
+
+const s3 = new window.AWS.S3({
+  apiVersion: "2006-03-01",
+  params: { Bucket: bucketName },
+});
+
 const Terrain = () => {
+  const ref = useRef();
   const [userData, setUserData] = useState({
     name: "",
     email: "",
     phone: "",
     address: "",
   });
+
   const [userFile, setUserFile] = useState("");
-  const [fileErr, setFileErr] = useState("");
+  const [fileErr, setFileErr] = useState("Drag and Drop your files or browse");
   const [phoneErr, setphoneErr] = useState("");
 
   const handleSubmit = (e) => {
@@ -23,10 +43,41 @@ const Terrain = () => {
     }
     const validatePhone = validator.isMobilePhone(userData.phone, ["en-IN"]);
     if (validatePhone) {
-      const formData = new FormData();
-      formData.append("file", userFile);
+      // const formData = new FormData();
+      // formData.append("file", userFile);
 
-      const { data } = Api.post("/user/data", { userData, formData });
+      s3.upload(
+        {
+          Key: `${userFile.name.substring(0.7)}`,
+          Body: userFile,
+          ACL: "public-read",
+        },
+        (err, data) => {
+          if (err) {
+            console.log(err);
+          }
+          if (data) {
+            userData.Objectdetails = data;
+
+            const resp = Api.post("/user/data", { userData });
+          }
+        }
+      ).on("httpUploadProgress", (progress) => {
+        const uploaded = parseInt((progress.loaded * 100) / progress.total);
+
+        if (ref) {
+          ref.current.setAttribute("value", uploaded);
+        }
+        if (uploaded === 100) {
+          setFileErr("File uploaded successfully");
+        } else {
+          setFileErr("Uploading");
+        }
+      });
+
+      // S3Client.uploadFile(userFile, userFile.name)
+      //   .then((data) => console.log(data))
+      //   .catch((err) => console.error(err));
     } else {
       return setphoneErr("Not Valid");
     }
@@ -87,11 +138,18 @@ const Terrain = () => {
               <label htmlFor="uploadfile">
                 <FiUploadCloud className="upload-icon" />
                 <p> Upload your file</p>
-                <span>Drag and Drop your files or browse</span>
                 <span className="file-details">{fileErr}</span>
+                {userFile && (
+                  <progress
+                    ref={ref}
+                    value="0"
+                    max="100"
+                    id="progressBar"></progress>
+                )}
               </label>
               <input
                 type="file"
+                accept=".mp4,.avi,.wbem,.mkv"
                 id="uploadfile"
                 onChange={(e) => {
                   setUserFile(e.target.files[0]);
