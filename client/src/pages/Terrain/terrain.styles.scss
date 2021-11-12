@@ -138,6 +138,7 @@
         padding: 0 1.2rem;
         text-align: center;
         word-wrap: break-word;
+        margin-top: 0.7rem;
       }
       .file-details {
         color: red;
@@ -147,7 +148,7 @@
         word-wrap: break-word;
       }
       #progressBar {
-        margin-top: 1rem;
+        margin-top: 0.6rem;
       }
     }
 
@@ -192,7 +193,7 @@
     button {
       font-family: "Poppins", sans-serif;
       display: block;
-      width: 7rem;
+      width: 8rem;
       margin: 0.6rem auto 0.2rem;
       padding: 0.3rem 0.7rem;
       background-color: #271aba;
@@ -211,11 +212,38 @@
         background: transparent;
         color: black;
       }
-
+      &:hover {
+        border: 2px solid #271aba;
+        background: transparent;
+        color: black;
+      }
       &:active {
         transform: scale(0.9);
       }
     }
+  }
+}
+
+.btn-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.btn-loading {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border: 0.25rem solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgb(255, 255, 255);
+  animation: spin 1s infinite linear;
+  margin-right: 0.5rem;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 @media screen and (max-width: 1600px) {

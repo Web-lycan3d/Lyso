@@ -7,6 +7,16 @@ import LandingBody from "../../components/landingCom/LandingBody";
 import LandingFooter from "../../components/landingCom/LandingFooter";
 
 const Landing = () => {
+  const query = window.Qs.parse(window.location.search, {
+    ignoreQueryPrefix: true,
+  });
+  if (query.uploaded) {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      window.history.pushState({}, "", "/");
+    }, 500);
+  }
+
   return (
     <React.Fragment>
       <div className="landing-container">

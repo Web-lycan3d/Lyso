@@ -24,7 +24,6 @@ const Sector = (props) => {
   const query = window.Qs.parse(window.location.search, {
     ignoreQueryPrefix: true,
   });
-  console.log(query);
 
   useEffect(() => {
     const mapTypes = secletedItem?.types?.find((item) => {
