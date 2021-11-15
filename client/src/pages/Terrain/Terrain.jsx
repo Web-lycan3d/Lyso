@@ -4,26 +4,17 @@ import "./terrain.styles.scss";
 import { FiUploadCloud } from "react-icons/fi";
 import validator from "validator";
 import Api from "../../api/Api";
+import { FileUpload } from "../../components/Fileupload";
+import { useHistory } from "react-router-dom";
 
-// import S3 from "aws-s3";
-
-const bucketName = "lyso-docs";
-const bucketRegion = "ap-south-1";
-
-window.AWS.config.update({
-  region: bucketRegion,
-  credentials: new window.AWS.CognitoIdentityCredentials({
-    IdentityPoolId: "",
-  }),
-});
-
-const s3 = new window.AWS.S3({
-  apiVersion: "2006-03-01",
-  params: { Bucket: bucketName },
-});
+//initlalizing s3 bucket
+const s3 = FileUpload();
 
 const Terrain = () => {
   const ref = useRef();
+  const ref2 = useRef();
+  const history = useHistory();
+
   const [userData, setUserData] = useState({
     name: "",
     email: "",
@@ -43,23 +34,24 @@ const Terrain = () => {
     }
     const validatePhone = validator.isMobilePhone(userData.phone, ["en-IN"]);
     if (validatePhone) {
-      // const formData = new FormData();
-      // formData.append("file", userFile);
+      setphoneErr("");
 
+      const filePath = userFile.name;
       s3.upload(
         {
-          Key: `${userFile.name.substring(0.7)}`,
+          Key: filePath,
           Body: userFile,
           ACL: "public-read",
         },
         (err, data) => {
           if (err) {
-            console.log(err);
+            setFileErr(
+              "There was an error while uploading the file please Upload after 5 min's "
+            );
           }
           if (data) {
             userData.Objectdetails = data;
-
-            const resp = Api.post("/user/data", { userData });
+            Api.post("/user/data", { userData });
           }
         }
       ).on("httpUploadProgress", (progress) => {
@@ -70,14 +62,15 @@ const Terrain = () => {
         }
         if (uploaded === 100) {
           setFileErr("File uploaded successfully");
+          ref2.current.setAttribute("disabled", false);
+          setTimeout(() => {
+            history.push("/?uploaded=" + true);
+          }, 2000);
         } else {
-          setFileErr("Uploading");
+          ref2.current.setAttribute("disabled", true);
+          setFileErr("Uploading Please wait");
         }
       });
-
-      // S3Client.uploadFile(userFile, userFile.name)
-      //   .then((data) => console.log(data))
-      //   .catch((err) => console.error(err));
     } else {
       return setphoneErr("Not Valid");
     }
@@ -139,6 +132,17 @@ const Terrain = () => {
                 <FiUploadCloud className="upload-icon" />
                 <p> Upload your file</p>
                 <span className="file-details">{fileErr}</span>
+
+                {userFile ? (
+                  <span>
+                    {fileErr !== "Uploading Please wait" &&
+                      fileErr !== "File uploaded successfully" &&
+                      "Click continue to upload"}
+                    {fileErr === "File uploaded successfully" && "Thank You"}
+                  </span>
+                ) : (
+                  <span>Supported Format .mp4 .avi .mkv .webm</span>
+                )}
                 {userFile && (
                   <progress
                     ref={ref}
@@ -202,7 +206,17 @@ const Terrain = () => {
                 }
                 cols="30"
                 rows="10"></textarea>
-              <button type="submit">Continue</button>
+              <button ref={ref2} type="submit">
+                {fileErr === "Uploading Please wait" ? (
+                  <div className="btn-flex">
+                    <div className="btn-loading"></div>Uploading
+                  </div>
+                ) : fileErr === "File uploaded successfully" ? (
+                  "Uploaded"
+                ) : (
+                  "Continue"
+                )}
+              </button>
             </div>
           </form>
         </div>
