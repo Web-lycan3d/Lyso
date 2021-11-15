@@ -45,9 +45,7 @@ const Terrain = () => {
         },
         (err, data) => {
           if (err) {
-            setFileErr(
-              "There was an error while uploading the file please Upload after 5 min's "
-            );
+            setFileErr("Error please refresh and try again");
           }
           if (data) {
             userData.Objectdetails = data;
