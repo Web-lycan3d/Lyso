@@ -7,7 +7,7 @@ export const FileUpload = () => {
   window.AWS.config.update({
     region: bucketRegion,
     credentials: new window.AWS.CognitoIdentityCredentials({
-      IdentityPoolId: "",
+      IdentityPoolId: "ap-south-1:1404b757-6cb1-4038-9e29-4adefbabb411",
     }),
   });
   const s3 = new window.AWS.S3({
