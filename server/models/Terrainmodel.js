@@ -12,6 +12,6 @@ const FileSchema = new mongoose.Schema({
     key: String,
   },
 });
-const userFile = mongoose.model("userFile", FileSchema);
+const Terrain = mongoose.model("Terrain", FileSchema);
 
-module.exports = userFile;
+module.exports = Terrain;

@@ -76,7 +76,7 @@ const Data_Processing = () => {
           }
           if (data) {
             userData.Objectdetails = data;
-            await Api.post("/user/data", { userData });
+            await Api.post("/user/data/process", { userData });
           }
         }
       ).on("httpUploadProgress", (progress) => {

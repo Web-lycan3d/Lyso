@@ -2,13 +2,9 @@
 
 const express = require("express");
 
-const userFile = require("../models/Files");
-
-// AKIARNRXXVIGCPLJJ2GC
-// IUhZOZIOkJqXEK2iMgNP6yzA0liiEg43iN4CtyWL
-
 const router = express.Router();
-const fs = require("fs");
+const DataP = require("../models/DataProcessing");
+const Terrain = require("../models/Terrainmodel");
 
 router.post("/data", async (req, res) => {
   // fs.readFile(req.files.file.path, (err, data) => {
@@ -16,11 +12,22 @@ router.post("/data", async (req, res) => {
   // });
 
   try {
-    const newFile = new userFile(req.body.userData);
+    const newFile = new Terrain(req.body.userData);
     await newFile.save();
   } catch (error) {
     console.log(error);
   }
 });
+router.post("/data/process", async (req, res) => {
+  // fs.readFile(req.files.file.path, (err, data) => {
+  //   console.log(data);
+  // });
 
+  try {
+    const newFile = new DataP(req.body.userData);
+    await newFile.save();
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports = router;
