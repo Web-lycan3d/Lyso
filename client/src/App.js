@@ -10,7 +10,8 @@ import About from "./pages/about/about.component";
 import Contact from "./pages/contact/contact.component";
 import Sector from "./pages/sector/Sector";
 import Terrain from "./pages/Terrain/Terrain";
-import Data_Processing from './pages/data-processing/data-processing.component'
+import Data_Processing from "./pages/data-processing/data-processing.component";
+import Selectedsector from "./pages/SelectedSector/Selectedsector";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/sector/:id" exact component={Sector} />
         <Route path="/terrain" exact component={Terrain} />
         <Route path="/data_processing" exact component={Data_Processing} />
+        <Route path="/read/sector/" exact component={Selectedsector} />
       </Switch>
       <Footer />
     </Fragment>
