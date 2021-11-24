@@ -151,7 +151,7 @@ const Terrain = () => {
               </label>
               <input
                 type="file"
-                accept=".mp4,.avi,.wbem,.mkv"
+                accept=".mp4,.avi,.wbem,.mkv,.zip"
                 id="uploadfile"
                 onChange={(e) => {
                   setUserFile(e.target.files[0]);

@@ -5,6 +5,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import "./data-processing.styles.scss";
 import { useForm } from "react-hook-form";
 import { FiUploadCloud } from "react-icons/fi";
+import validator from "validator";
 import { FileUpload } from "../../components/Fileupload";
 import Api from "../../api/Api";
 import doneImg from "./done.png";
@@ -12,8 +13,8 @@ import doneImg from "./done.png";
 const Data_Processing = () => {
   const [step, setStep] = React.useState(0);
   const [userFile, setUserFile] = useState("");
-  const [fileStatus, setfileStatus] = useState("Select a file to continue");
-
+  const [fileStatus, setfileStatus] = useState("Select a file to continue(.zip,.mp4,.avi,.wbem,.mkv is supported)");
+  const [phoneErr, setphoneErr] = useState("");
   const [fileupStatus, setfileupStatus] = useState(
     "Uploading and Saving Data please wait"
   );
@@ -58,38 +59,45 @@ const Data_Processing = () => {
       );
   };
   const submitform = (userData) => {
-    completeFormStep();
-    s3.upload(
-      {
-        Key: userFile.name,
-        Body: userFile,
-        ACL: "public-read",
-      },
-      async (err, data) => {
-        if (err) {
-          console.log(err);
-          setfileupStatus("Error please refresh and try again");
+    const validatePhone = validator.isMobilePhone(userData.phone, ["en-IN"]);
+    if (validatePhone) {
+      setphoneErr("")
+      completeFormStep();
+      s3.upload(
+        {
+          Key: userFile.name,
+          Body: userFile,
+          ACL: "public-read",
+        },
+        async (err, data) => {
+          if (err) {
+            console.log(err);
+            setfileupStatus("Error please refresh and try again");
+          }
+          if (data) {
+            userData.Objectdetails = data;
+            await Api.post("/user/data/process", { userData });
+          }
         }
-        if (data) {
-          userData.Objectdetails = data;
-          await Api.post("/user/data/process", { userData });
+      ).on("httpUploadProgress", (progress) => {
+        const uploaded = parseInt((progress.loaded * 100) / progress.total);
+
+        ref.current.setAttribute("value", uploaded);
+        document.querySelector(".data-upvalue").innerHTML = uploaded + "%";
+
+        document.querySelector("#emailstatus").innerHTML = "";
+
+        if (uploaded === 100) {
+          setfileupStatus("File Successfully Uploaded for Processing");
+          document.querySelector("#imagestatus").style.display = "block";
+          document.querySelector("#imagestatus").style.opacity = "1";
+          document.querySelector("#emailstatus").innerHTML =
+            "Please check Your E-Mail for Updates";
         }
-      }
-    ).on("httpUploadProgress", (progress) => {
-      const uploaded = parseInt((progress.loaded * 100) / progress.total);
-
-      ref.current.setAttribute("value", uploaded);
-      document.querySelector(".data-upvalue").innerHTML = uploaded + "%";
-
-      document.querySelector("#emailstatus").innerHTML = "";
-
-      if (uploaded === 100) {
-        setfileupStatus("File Successfully Uploaded for Processing");
-        document.querySelector("#imagestatus").style.display = "block";
-        document.querySelector("#emailstatus").innerHTML =
-          "Please check Your E-Mail for Updates";
-      }
-    });
+      });
+    } else {
+      setphoneErr("Not valid")
+    }
   };
 
   const handleFiles = (e) => {
@@ -138,7 +146,7 @@ const Data_Processing = () => {
                 <input
                   type="file"
                   required
-                  accept=".mp4,.avi,.wbem,.mkv"
+                  accept=".mp4,.avi,.wbem,.mkv,.zip"
                   id="uploadfile2"
                   name="files"
                   onChange={(e) => handleFiles(e)}
@@ -250,6 +258,7 @@ const Data_Processing = () => {
                     {errors.phone && (
                       <p className="errors">{errors.phone.message}</p>
                     )}
+                    <p className="errors">{phoneErr}</p>
                   </div>
                   <div className="form-content-right">
                     <input
@@ -282,7 +291,7 @@ const Data_Processing = () => {
             {step === 3 && (
               <div className="form-content">
                 <div className="success-cont">
-                  <img src={doneImg} alt="error" id="imagestatus" />
+                  <img src="https://i.ibb.co/hYNwtd4/Group-5520-min.png" alt="error" id="imagestatus" />
                   <h1 className="data-h1">{fileupStatus}</h1>
                   <span className="data-upvalue"> </span>
                   <progress

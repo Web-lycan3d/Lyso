@@ -78,8 +78,8 @@ const Navbar = () => {
                 </ul>
               </div>
             </li>
-            <li className="main-li">3D Printing Services</li>
-            <li className="main-li">Survey Data Processing</li>
+            <li className="main-li"> <Link className="li" to="/terrain">3D Printing Services</Link> </li>
+            <li className="main-li"> <Link className="li" to="/data_processing">Survey Data Processing</Link> </li>
           </ul>
         </div>
       </div>
