@@ -2,7 +2,7 @@
 
 .nav-container {
   width: 100%;
-  height: auto;
+  height: 70px;
   background-color: white;
   box-shadow: 0px 20px 30px rgba(3, 3, 3, 0.048);
 }
@@ -12,16 +12,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.3rem 0;
   margin: 0 auto;
 }
 .brand-logo {
-  width: 150px;
+  width: 120px;
   height: 50px;
-  background-color: aquamarine;
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
   }
 }
@@ -31,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgb(70, 106, 255);
+    color: rgb(0 , 0 ,0);
     .main-li {
       list-style: none;
       margin: 0.4rem 0.8rem;
@@ -42,13 +40,11 @@
       font-size: 0.9rem;
       letter-spacing: 0.4px;
       transition: all 0.45s cubic-bezier(0.19, 1, 0.22, 1);
-
       cursor: pointer;
       position: relative;
       z-index: 50;
       &::after {
         content: "";
-
         position: absolute;
         bottom: -1.05rem;
         left: 0;
@@ -64,12 +60,15 @@
     }
     .main-li:last-child {
       border: 2px solid rgb(70, 106, 255);
+      background-color: rgb(70, 106, 255);
+      color: white;
+      padding: 0.2rem 1.3rem;
       &:after {
         opacity: 0;
       }
       &:hover {
-        background-color: rgb(70, 106, 255);
-        color: white;
+        background-color: rgb(255 , 255, 255);
+        color: rgb(70, 106, 255);
       }
 
       &:focus {
@@ -82,13 +81,8 @@
 
       position: relative;
     }
-    .li-service {
-      position: relative;
-      text-align: center;
-    }
 
-    .dropdown-sector,
-    .dropdown-service {
+    .dropdown-sector{
       width: auto;
       height: auto;
       position: absolute;
@@ -102,11 +96,9 @@
       opacity: 0;
       visibility: hidden;
       transition: all 0.45s cubic-bezier(0.19, 1, 0.22, 1);
-      .sector-ul,
-      .service-ul {
+      .sector-ul {
         padding-left: 0;
-        .sector-li,
-        .service-li {
+        .sector-li {
           list-style: none;
           padding: 0.3rem 0.4rem 0.3rem;
           margin: 0.25rem 0;
@@ -124,11 +116,7 @@
         }
       }
     }
-    .dropdown-service {
-      left: -3rem;
-    }
-    .dropdown-sector-active,
-    .dropdown-service-active {
+    .dropdown-sector-active {
       opacity: 1;
       transform: translateY(0);
       visibility: visible;

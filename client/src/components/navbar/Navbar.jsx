@@ -6,50 +6,26 @@ import "./navbar.styles.scss";
 
 const Navbar = () => {
   const [sectorDrowpDown, setsectorDrowpDown] = useState(false);
-  const [serviceDrowpDown, setserviceDrowpDown] = useState(false);
 
   const handleSectorDropDown = () => {
     setsectorDrowpDown(true);
-  };
-  const handleServiceDropDown = () => {
-    setserviceDrowpDown(true);
   };
   return (
     <div className="nav-container">
       <div className="nav-contents">
         <div className="brand-logo">
-          <img src="" alt="" />
+          <Link to="/"><img src="https://i.ibb.co/f0Ggrj7/lyso-min.png" alt="Lyso Logo" /></Link>
         </div>
         <div className="nav-items">
           <ul className="main-ul">
             <li
-              className="main-li li-service"
-              onClick={() => {
-                setsectorDrowpDown(false);
-                setserviceDrowpDown(!serviceDrowpDown);
-              }}>
-              Services
-              <div
-                className={
-                  serviceDrowpDown
-                    ? "dropdown-service dropdown-service-active"
-                    : "dropdown-service"
-                }>
-                <ul className="service-ul">
-                  <li className="service-li" onClick={handleServiceDropDown}>
-                    LiDAR
-                  </li>
-                  <li className="service-li" onClick={handleServiceDropDown}>
-                    Photogrammertry
-                  </li>
-                </ul>
-              </div>
+              className="main-li" onClick={() => setsectorDrowpDown(false)}>
+              <Link to="/survey" className="li">Survey</Link>
             </li>
             <li
               className="main-li li-sector"
               title="Sectors"
               onClick={() => {
-                setserviceDrowpDown(false);
                 setsectorDrowpDown(!sectorDrowpDown);
               }}>
               Sectors
@@ -78,8 +54,9 @@ const Navbar = () => {
                 </ul>
               </div>
             </li>
-            <li className="main-li"> <Link className="li" to="/terrain">3D Printing Services</Link> </li>
-            <li className="main-li"> <Link className="li" to="/data_processing">Survey Data Processing</Link> </li>
+            <li className="main-li" onClick={() => setsectorDrowpDown(false)}> <Link className="li" to="/terrain">3D Model</Link> </li>
+            <li className="main-li" onClick={() => setsectorDrowpDown(false)}> <Link className="li" to="/data_processing">Data Processing</Link> </li>
+            <li className="main-li" onClick={() => setsectorDrowpDown(false)}> <Link className="li" to="/stigmi">Stigmi</Link> </li>
           </ul>
         </div>
       </div>
