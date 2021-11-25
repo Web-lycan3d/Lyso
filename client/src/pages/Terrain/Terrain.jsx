@@ -6,6 +6,7 @@ import validator from "validator";
 import Api from "../../api/Api";
 import { FileUpload } from "../../components/Fileupload";
 import { useHistory } from "react-router-dom";
+import { AiFillThunderbolt } from "react-icons/ai";
 
 //initlalizing s3 bucket
 const s3 = FileUpload();
@@ -77,53 +78,45 @@ const Terrain = () => {
     <div className="terrain-container">
       <div className="terrain-contents">
         <div className="terrain-header">
-          <h2>3D PRINT TERRAIN</h2>
-          <p>
-            Through the exciting advancements made in 3D printing technology, we
-            can now bring your survey data to life! By scanning your data, we
-            are able to create 3D scaled models for visualisation and
-            communication. This service works by manipulating point cloud data
-            into a surface as a Digital Terrain Model (DTM) and you are finally
-            provided with your very own 3D printed terrain.
-          </p>
+          <img src="https://i.ibb.co/cvgZswQ/Group-9467.webp" alt="" />
+          <div className="terrain-header-details">
+            <h2>
+              3D MODEL <br /> <b> PRINTING</b>{" "}
+            </h2>
+            <p>
+              Through the exciting advancements made in 3D printing technology,
+              we can now bring your survey data to life! By scanning your data,
+              we are able to create 3D scaled models for visualisation and
+              communication. This service works by manipulating point cloud data
+              into a surface as a Digital Terrain Model (DTM) and you are
+              finally provided with your very own 3D printed terrain.
+            </p>
+            <button className="custom-btn">
+              <AiFillThunderbolt className="thunder-icon" /> Print Now
+            </button>
+          </div>
         </div>
         <div className="terrain-body">
-          <div className="terrain-body-item">
-            <div className="bg-no">
-              <img src="https://i.ibb.co/gv2wDyT/1.png" alt="error" />
-            </div>
-            <p>SURVEY DATA IS SCANNED</p>
-            <img
-              className="terrain-img"
-              src="https://i.ibb.co/G3HtX9S/Survey-And-Map-2.webp"
-              alt="terrain"
-            />
-          </div>
-          <div className="terrain-body-item">
-            <div className="bg-no">
-              <img src="https://i.ibb.co/DtBhKsz/2.png" alt="error" />
-            </div>
-            <p>VISUAL 3D MODEL IS CREATED</p>
-            <img
-              className="terrain-img"
-              src="https://i.ibb.co/PrV436T/Cartoon-Terrain-G04-2k.webp"
-              alt="terrain"
-            />
-          </div>
-          <div className="terrain-body-item">
-            <div className="bg-no">
-              <img src="https://i.ibb.co/6HN6kFr/3.png" alt="error" />
-            </div>
-            <p>TERRAIN IS 3D PRINTED AND DELIVERED</p>
-            <img
-              className="terrain-img"
-              src="https://i.ibb.co/GnXWQvx/touch-Terrain-logo.webp"
-              alt="terrain"
-            />
+          <img src="https://i.ibb.co/cYgjSqp/Group-9466.webp" alt="" />
+
+          <div className="terrain-body-text">
+            <h2>Customised Approach</h2>
+            <span>
+              There are many options when it comes to what you can create on a
+              3D printer with Survey data
+            </span>
+            <span>
+              Utilizing a customized approach, we ensure that every user's needs
+              are fulfilled accurately according to their requirements.
+            </span>
+            <span>
+              So head on down below to get you survey data 3D printed!
+            </span>
           </div>
         </div>
         <div className="terrain-footer">
           <form onSubmit={handleSubmit}>
+            <img src="https://i.ibb.co/3y846Fg/Group-9468.webp" alt="" />
             <div className="terrain-footer-contents">
               <span className="label-no">01</span>
               <label htmlFor="uploadfile">

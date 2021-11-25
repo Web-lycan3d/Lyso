@@ -7,97 +7,109 @@
 }
 
 .terrain-contents {
-  padding: 2% 12%;
+  width: 100%;
   height: 100%;
   padding-bottom: 6%;
 }
 .terrain-header {
+  width: 100%;
+
+  padding: 11% 0;
   display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
   align-items: center;
-  justify-content: center;
-  h2 {
-    font-size: 3.8rem;
-    line-height: 1.1;
-    color: #271aba;
+  img {
+    width: 500px;
+    height: 500px;
   }
-  p {
-    padding: 0 0.6rem;
-    width: 100%;
-    font-size: 1.15rem;
-    line-height: 1.8;
+  .terrain-header-details {
+    width: 45rem;
+    position: relative;
+    bottom: 2rem;
+    h2 {
+      margin-top: 0;
+      font-size: 3.5rem;
+      font-weight: 300;
+      margin-bottom: 0;
+      b {
+        margin-top: 0;
+        position: relative;
+        bottom: 0.5rem;
+      }
+    }
+    p {
+      padding-right: 0.9rem;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-top: 0.8rem;
+    }
+    .custom-btn {
+      margin-top: 1.5rem;
+    }
   }
 }
 .terrain-body {
-  width: 100%;
-  margin: 9% 0;
+  width: 90%;
+  padding: 5% 0;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
-  right: 3rem;
-  .terrain-body-item {
-    width: 290px;
-    height: 260px;
-    margin: 0 4%;
-    position: relative;
-    .bg-no {
-      position: absolute;
-      width: 160%;
-      height: 160%;
-      right: -12rem;
-      top: -6rem;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-    &::after {
-      position: absolute;
-      content: "- - - - - - - - - - - - ";
-      top: 60%;
-      right: -12rem;
-      transform: translateY(-50%);
-      width: 10rem;
-      height: 0;
-      background-color: black;
-    }
-    p {
-      margin: 0;
-      font-weight: 700;
-      font-size: 1.4rem;
-      text-align: center;
-    }
-    .terrain-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+  left: 3%;
+  img {
+    width: 700px;
+    height: 480px;
   }
-  .terrain-body-item:last-child {
-    &::after {
-      display: none;
+  .terrain-body-text {
+    width: 100%;
+    margin: 2rem 1rem 0;
+
+    h2 {
+      font-size: 2rem;
+      color: #2269e9;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+    span {
+      width: 80%;
+      margin: 1rem 0;
+      display: block;
+
+      font-size: 1.02rem;
+    }
+    span:nth-child(4) {
+      color: #2268e9d0;
     }
   }
 }
 .terrain-footer {
   width: 100%;
-  margin: 20% auto 3%;
+  margin: 8% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   form {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    img {
+      width: 300px;
+      height: 380px;
+      margin-right: 4rem;
+    }
   }
   .terrain-footer-contents {
     width: 295px;
-    height: 320px;
-    padding: 0.8rem;
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='blue' stroke-width='5' stroke-dasharray='15' stroke-dashoffset='10' stroke-linecap='square'/%3e%3c/svg%3e");
-    border-radius: 30px;
+    height: 350px;
+    padding: 1.2rem 0.8rem;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='34' ry='34' stroke='%23333' stroke-width='5' stroke-dasharray='6%2c 14' stroke-dashoffset='7' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 34px;
+
     position: relative;
-    margin: 0 5rem;
+    margin: 0 4rem;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.089);
     .label-no {
@@ -126,7 +138,7 @@
 
       .upload-icon {
         font-size: 5rem;
-        color: #271aba;
+        color: #000000;
       }
       p {
         font-size: 1.5rem;
@@ -166,60 +178,29 @@
     justify-content: center;
 
     p {
-      margin: 0.5rem 0 0.8rem;
-      margin-top: 0.3rem;
+      margin: 0.5rem 0 0.9rem;
+
       font-size: 1.3rem;
-      color: #271aba;
+      color: #000000;
       font-weight: 500;
     }
     input,
     textarea {
       font-family: "Poppins", sans-serif;
-      padding: 0.38rem 0.8rem;
-      border-radius: 15px;
-      border: 1px solid #271aba;
+      padding: 0.32rem 0.8rem;
+      border-radius: 10px;
+      border: 2px solid #070707;
       margin: 0.5rem 0;
       outline: 0;
-      width: 78%;
+      width: 75%;
       &::placeholder {
-        color: rgb(158, 158, 158);
+        color: rgba(158, 158, 158, 0.884);
       }
     }
     .form-errors {
       font-size: 0.8rem;
       color: rgb(255, 0, 0);
       font-weight: 400;
-    }
-    button {
-      font-family: "Poppins", sans-serif;
-      display: block;
-      width: 8rem;
-      margin: 0.6rem auto 0.2rem;
-      padding: 0.3rem 0.7rem;
-      background-color: #271aba;
-      border: 0;
-      border: 2px solid #271aba00;
-
-      color: white;
-
-      outline: 0;
-      border-radius: 20px;
-      cursor: pointer;
-      position: relative;
-      z-index: 100;
-      &:hover {
-        border: 2px solid #271aba;
-        background: transparent;
-        color: black;
-      }
-      &:hover {
-        border: 2px solid #271aba;
-        background: transparent;
-        color: black;
-      }
-      &:active {
-        transform: scale(0.9);
-      }
     }
   }
 }
@@ -241,17 +222,23 @@
 @keyframes spin {
   0% {
     transform: rot updating array inside ate(0deg);
+    border-top-color: rgb(0, 0, 0);
+  }
+  25% {
+    border-top-color: rgb(13, 111, 224);
+  }
+  50% {
+    border-top-color: rgb(13, 224, 108);
+  }
+  75% {
+    border-top-color: rgb(189, 50, 32);
   }
   100% {
     transform: rotate(360deg);
+    border-top-color: rgb(0, 0, 0);
   }
 }
 @media screen and (max-width: 1600px) {
-  .terrain-contents {
-    padding: 2% 5%;
-    height: 100%;
-    padding-bottom: 6%;
-  }
   .terrain-header {
     h2 {
       font-size: 2.9rem;
@@ -260,22 +247,46 @@
 }
 @media screen and (max-width: 1500px) {
   .terrain-contents {
-    padding: 2% 2%;
     height: 100%;
     padding-bottom: 6%;
+    .terrain-header {
+      .terrain-header-details {
+        width: 50%;
+        padding-left: 3%;
+      }
+    }
+  }
+  .terrain-body {
+    width: 95%;
+
+    img {
+      width: 540px;
+      height: 420px;
+    }
   }
   .terrain-footer {
+    form {
+      img {
+        margin: 0 2rem;
+      }
+    }
+
     .terrain-footer-contents {
       width: 280px;
-      height: 300px;
-      padding: 1rem;
+      height: 320px;
+      margin: 0 2rem;
     }
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
   .terrain-footer {
+    form {
+      img {
+        margin: 0 1rem;
+      }
+    }
     .terrain-footer-contents {
-      margin: 0 1.5rem;
+      margin: 0 1rem;
     }
   }
 }

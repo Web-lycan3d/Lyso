@@ -3,6 +3,8 @@
 import { Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
+import "./custom.styles.scss";
+
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Landing from "./pages/landing/Landing";
@@ -10,11 +12,10 @@ import About from "./pages/about/about.component";
 import Contact from "./pages/contact/contact.component";
 import Sector from "./pages/sector/Sector";
 import Terrain from "./pages/Terrain/Terrain";
-import Data_Processing from './pages/data-processing/data-processing.component'
+import Data_Processing from "./pages/data-processing/data-processing.component";
 import Survey from "./pages/survey/survey.component";
 import Stigmi from "./pages/stigmi/stigmi.component";
 import Selectedsector from "./pages/SelectedSector/Selectedsector";
-
 function App() {
   return (
     <Fragment>

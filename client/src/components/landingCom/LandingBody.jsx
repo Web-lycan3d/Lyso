@@ -1,44 +1,38 @@
 /** @format */
 
 import React from "react";
+
+import Landindbodyimg from "./Landindbodyimg";
 import "./landingbody.styles.scss";
 
 const LandingBody = () => {
   return (
-    <div className="landing-body">
-      <div className="landing-body-left">
+    <div className="landing-body-container">
+      <div className="landing-body-contents">
         <h2>
-          WHY <span className="span-blue"> LYSO?</span>
+          SECTORS <span>WE SERVICE</span>{" "}
         </h2>
-        <div className="landing-body-box">
-          <p>Faster Data Acquisition</p>
-          <span>
-            Our high-end UAV surveying and inspection allow us to capture data
-            40% faster than other traditional methods.
-          </span>
-        </div>{" "}
-        <div className="landing-body-box">
-          <p>Economical, Efficient & Safe</p>
-          <span>
-            Our UAV surveys are efficient, more economical and safer than
-            customary manual surveys.
-          </span>
-        </div>
-        <div className="landing-body-box">
-          <p>Amplified Reliability</p>
-          <span>
-            The results obtained from our UAV’s are completely reliable centred
-            on highly precise outcomes with high durability and extraordinary
-            coverage area.
-          </span>
-        </div>
-        <div className="landing-body-box">
-          <p>Highly Accurate Survey</p>
-          <span>
-            We use machine learning, comprehensive UAV surveying, and mapping to
-            produce highly accurate volumetric measurements and yield
-            estimation.
-          </span>
+        <div className="landing-body-items">
+          <Landindbodyimg
+            src="https://i.ibb.co/55LtcWP/Group-9519.webp"
+            path="/sector/1?type=Mining"
+          />
+          <Landindbodyimg
+            src="https://i.ibb.co/S7CL5W7/Group-9522.webp"
+            path="/sector/4?type=Construction"
+          />
+          <Landindbodyimg
+            src="https://i.ibb.co/5WGdvHG/Group-9523.webp"
+            path="/sector/5?type=Security"
+          />
+          <Landindbodyimg
+            src="https://i.ibb.co/xXcpjVn/Group-9521.webp"
+            path="/sector/2?type=Seed Plantation"
+          />
+          <Landindbodyimg
+            src="https://i.ibb.co/Lx5SK28/Group-9520.webp"
+            path="/sector/3?type=Medical Delivery"
+          />
         </div>
       </div>
     </div>
