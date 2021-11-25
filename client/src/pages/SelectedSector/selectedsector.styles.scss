@@ -1,0 +1,144 @@
+/** @format */
+
+.sel-sector-container {
+  width: 100%;
+  height: auto;
+}
+
+.sel-sector-contents {
+  width: 100%;
+  padding: 0 0 5%;
+  height: auto;
+  overflow: hidden;
+}
+.sel-header {
+  height: 50rem;
+
+  position: relative;
+}
+.sel-h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.9rem;
+  font-weight: 600;
+}
+.sel-header-details {
+  width: 50%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background-color: rgba(58, 57, 57, 0.301);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+  padding-left: 3%;
+  color: white;
+  .sel-h2 {
+    margin-top: 8%;
+  }
+  p {
+    margin-top: 0.8rem;
+    width: 90%;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 2.1;
+    letter-spacing: 0.7px;
+    opacity: 0.9;
+  }
+  .sel-sector-service {
+    width: 100%;
+    padding-top: 9%;
+    position: relative;
+    top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    .sel-s-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 1.8rem;
+      img {
+        width: 140px;
+      }
+      .list-span {
+        position: relative;
+        bottom: 2rem;
+        color: white;
+      }
+    }
+    .sel-s-box:nth-child(1) {
+      margin-left: 0;
+    }
+    .sel-s-box:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.sel-body {
+  padding: 5% 6% 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sel-body-details {
+  align-self: flex-start;
+  width: 60%;
+  span {
+    display: block;
+    padding-right: 0.9rem;
+    line-height: 2.2;
+    margin-top: 1.5rem;
+  }
+}
+.sel-sector-img {
+  padding-top: 4%;
+  padding-right: 3%;
+  width: 280px;
+  height: 460px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.sel-footer {
+  padding: 4% 6%;
+  .sel-f-items {
+    width: 100%;
+    margin: 5% auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: center;
+    .sel-f-item-align {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+    }
+    .sel-f-item {
+      min-width: 10rem;
+      margin: 1rem 1.5rem;
+      position: relative;
+      &::before {
+        position: absolute;
+        top: 0.5rem;
+        left: 0;
+        width: 3rem;
+        height: 0.2rem;
+        background-color: rgb(37, 56, 230);
+        content: "";
+        border-radius: 20px;
+      }
+    }
+  }
+}

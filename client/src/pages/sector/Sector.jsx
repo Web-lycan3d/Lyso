@@ -13,7 +13,6 @@ const Sector = (props) => {
   const id = props.match.params.id;
 
   useEffect(() => {
-    console.log(typeof id);
     const selectedSector = Sectors.find((item) => {
       return item.id === parseInt(id);
     });
@@ -34,8 +33,10 @@ const Sector = (props) => {
   }, [secletedItem, query.type]);
 
   return (
-    <div className="sector-container">
-      <h2>{secletedItem.name}</h2>
+    <div
+      className="sector-container"
+      style={{ background: `url(${secletedType?.bg}) no-repeat center` }}>
+      {/* <h2>{secletedItem.name}</h2> */}
       <div className="sector-contents">
         <div className="sector-sidebar">
           {secletedItem?.types?.map((data, index) => (
@@ -58,12 +59,18 @@ const Sector = (props) => {
           </div>
           <div className="sector-item-details">
             <h3>{secletedType?.itemName}</h3>
-            <p>{secletedType?.itemDetails}</p>
+            <p>
+              {secletedType?.itemDetails + "..."}{" "}
+              <Link
+                to={`/read/sector/?sectorName=${secletedItem?.name}&sectorId=${secletedType?.itemName}`}>
+                Read more
+              </Link>{" "}
+            </p>
           </div>
           <div className="sector-details">
             <h3>Benifits</h3>
             {secletedItem?.details?.map((data, index) => (
-              <p key={index}>{data.desp}</p>
+              <p key={index}>{data.desp} </p>
             ))}
           </div>
         </div>

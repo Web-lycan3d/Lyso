@@ -13,6 +13,7 @@ import Terrain from "./pages/Terrain/Terrain";
 import Data_Processing from './pages/data-processing/data-processing.component'
 import Survey from "./pages/survey/survey.component";
 import Stigmi from "./pages/stigmi/stigmi.component";
+import Selectedsector from "./pages/SelectedSector/Selectedsector";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/data_processing" exact component={Data_Processing} />
         <Route path="/survey" exact component={Survey} />
         <Route path="/stigmi" exact component={Stigmi} />
+        <Route path="/read/sector/" exact component={Selectedsector} />
       </Switch>
       <Footer />
     </Fragment>

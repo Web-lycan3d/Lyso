@@ -1,51 +1,65 @@
 /** @format */
 
 .landing-container {
-  padding: 9% 12% 14%;
+  padding: 9% 10% 3.5%;
   height: auto;
   position: relative;
-  background-color: lightgray;
+  background-color: rgb(100, 100, 100);
   margin-bottom: 0%;
   scroll-behavior: smooth;
 }
 .landing-contents {
-  height: 85%;
+  margin-top: 16rem;
+  position: relative;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  background: transparent linear-gradient(104deg, #271aba 0%, #140d5d 100%);
+  border-radius: 30px;
+
+  padding: 1rem 0rem 0;
 }
 .span-blue {
   color: #271aba;
 }
+.landing-text-box:nth-child(2) {
+  border-right: 2px solid rgba(0, 0, 255, 0);
+  padding-right: 0;
+}
 .landing-text-box {
   width: 500px;
   height: auto;
-
+  padding-right: 8rem;
+  border-right: 2px solid rgba(255, 255, 255, 0.452);
+  position: relative;
   h2 {
-    font-size: 2.4rem;
+    position: relative;
+    bottom: 3.5rem;
+    color: white;
+    font-size: 3rem;
     margin-top: 0.2rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0rem;
   }
   span {
-    background-color: rgb(255, 255, 255);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 2rem 1.5rem;
+    position: relative;
+    bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.815);
     line-height: 2.2;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     display: block;
     margin-bottom: 0.8rem;
   }
 }
 .landing-header-footer {
   position: absolute;
-  bottom: -3rem;
+  bottom: -7.5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
+  width: 100%;
 
   background-color: white;
-  height: 7rem;
+  height: 8rem;
   padding: 0.5rem 0;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.075);
   display: flex;
@@ -77,6 +91,6 @@
 
 @media screen and (max-width: 1500px) {
   .landing-container {
-    padding: 9% 5% 14%;
+    padding: 9% 2% 3%;
   }
 }
