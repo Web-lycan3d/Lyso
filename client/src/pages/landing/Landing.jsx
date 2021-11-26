@@ -5,6 +5,7 @@ import "./landing.styles.scss";
 import { AiFillThunderbolt } from "react-icons/ai";
 import LandingBody from "../../components/landingCom/LandingBody";
 import LandingFooter from "../../components/landingCom/LandingFooter";
+import LandingMap from "../../components/landingCom/LandingMap";
 
 const Landing = () => {
   const query = window.Qs.parse(window.location.search, {
@@ -45,6 +46,7 @@ const Landing = () => {
         </div>
       </div>
       <LandingBody />
+      <LandingMap />
       <LandingFooter />
     </React.Fragment>
   );

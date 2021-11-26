@@ -197,6 +197,23 @@
         color: rgba(158, 158, 158, 0.884);
       }
     }
+    button {
+      font-size: 0.9rem;
+      font-family: "Poppins", sans-serif;
+      padding: 0.35rem 1rem;
+      width: 7.5rem;
+      background-color: #1d1d1def;
+      border: 0;
+      outline: 0;
+      border-radius: 18px;
+      color: white;
+      border: 2px solid #1b1b1bef;
+      cursor: pointer;
+      &:hover {
+        background: transparent;
+        color: black;
+      }
+    }
     .form-errors {
       font-size: 0.8rem;
       color: rgb(255, 0, 0);

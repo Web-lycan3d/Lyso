@@ -9,28 +9,33 @@ const LandingBody = () => {
   return (
     <div className="landing-body-container">
       <div className="landing-body-contents">
-        <h2>
-          SECTORS <span>WE SERVICE</span>{" "}
+        <h2 className="landing-h2">
+          SECTORS <span className="landing-span">WE SERVICE</span>{" "}
         </h2>
         <div className="landing-body-items">
           <Landindbodyimg
-            src="https://i.ibb.co/55LtcWP/Group-9519.webp"
+            text="Delivery"
+            src="https://i.ibb.co/XJzB8sr/2021-02-04-T165145-Z-2126501675-MT1-CVMD41217305-RTRMADP-3-FEATURE-VACCINE-DRONE-1-min-1.webp"
             path="/sector/1?type=Mining"
           />
           <Landindbodyimg
-            src="https://i.ibb.co/S7CL5W7/Group-9522.webp"
+            text="Surveilance"
+            src="https://i.ibb.co/TkKWyDQ/jared-murray-NSuufgf-BME-unsplash-min-1.webp"
             path="/sector/4?type=Construction"
           />
           <Landindbodyimg
-            src="https://i.ibb.co/5WGdvHG/Group-9523.webp"
+            text="infrastructure"
+            src="https://i.ibb.co/NrF7Mr2/daniel-bernard-s67-PZz8-Xt3c-unsplash-1-min-1.webp"
             path="/sector/5?type=Security"
           />
           <Landindbodyimg
-            src="https://i.ibb.co/xXcpjVn/Group-9521.webp"
+            text="Enviroment"
+            src="https://i.ibb.co/rmm5d58/neostalgic-Dz-Uxa-Wweq-XI-unsplash-min-1.webp"
             path="/sector/2?type=Seed Plantation"
           />
           <Landindbodyimg
-            src="https://i.ibb.co/Lx5SK28/Group-9520.webp"
+            text="Energy"
+            src="https://i.ibb.co/hZMwZnf/1-min-1.webp"
             path="/sector/3?type=Medical Delivery"
           />
         </div>
