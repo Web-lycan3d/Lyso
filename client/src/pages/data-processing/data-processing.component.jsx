@@ -1,14 +1,14 @@
 /** @format */
 
 import React, { Fragment, useRef, useState } from "react";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import "./data-processing.styles.scss";
 import { useForm } from "react-hook-form";
-import { FiUploadCloud } from "react-icons/fi";
 import validator from "validator";
+import { FiUploadCloud } from "react-icons/fi";
 import { FileUpload } from "../../components/Fileupload";
+import { BsFillLightningChargeFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 import Api from "../../api/Api";
-import doneImg from "./done.png";
 
 const Data_Processing = () => {
   const [step, setStep] = React.useState(0);
@@ -20,6 +20,7 @@ const Data_Processing = () => {
   );
 
   const ref = useRef();
+  const scrollRef = useRef();
 
   const {
     watch,
@@ -99,7 +100,13 @@ const Data_Processing = () => {
       setphoneErr("Not valid")
     }
   };
-
+  const scrollDown = () =>
+    window.scrollTo({
+      top: scrollRef.current.offsetTop,
+      behavior: "smooth",
+      // You can also assign value "auto"
+      // to the behavior parameter.
+    });
   const handleFiles = (e) => {
     const file = e.target.files[0];
     setUserFile(file);
@@ -120,6 +127,7 @@ const Data_Processing = () => {
           <p>LYSO offers all-in-one drone survey solutions that
             contain all the resources that you need to <span>plan, visualize, process,
               and analyze aerial data.</span></p>
+          <button className="btn" onClick={scrollDown}><BsFillLightningChargeFill /> {" "}Get Started</button>
         </div>
         <div className="data-pro-content">
           <img
@@ -129,10 +137,10 @@ const Data_Processing = () => {
         </div>
       </div>
       <div className="data-mid-cont">
-          <img src="https://i.ibb.co/pyxX1Kc/Group-9473-min.png" alt="" />
-          <p>We convert raw survey data recording into customised output using our proprietary systems as per user requirements.</p>
+        <img src="https://i.ibb.co/pyxX1Kc/Group-9473-min.png" alt="" />
+        <p>We convert raw survey data recording into customised output using our proprietary systems as per user requirements.</p>
       </div>
-      <div className="data-second-container">
+      <div className="data-second-container" ref={scrollRef}>
         <div className="white-div">
           <img src="https://i.ibb.co/VT7gVjw/contourmapping-5-min.png" alt="" />
         </div>

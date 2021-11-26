@@ -1,11 +1,13 @@
 import React, { Fragment } from 'react'
 import { TiTick } from 'react-icons/ti'
-import { BsFillLightningChargeFill } from 'react-icons/bs'
+import { BsFillLightningChargeFill } from 'react-icons/bs' 
+import {useHistory} from "react-router-dom"
 
 
 import './survey.styles.scss'
 
 const Survey = () => {
+    const history = useHistory()
     return (
         <Fragment className="survey">
             <div className="survey-1cont">
@@ -58,7 +60,7 @@ const Survey = () => {
             </div>
             <div className="survey-4cont">
                 <span>For any queries or further information about our services</span>
-                <button className="btn"><BsFillLightningChargeFill/> {" "}Contact us</button>
+                <button className="btn" onClick={() => history.push('/contact')}><BsFillLightningChargeFill/> {" "}Contact us</button>
             </div>
         </Fragment>
     )
