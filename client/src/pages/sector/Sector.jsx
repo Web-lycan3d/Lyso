@@ -61,11 +61,13 @@ const Sector = (props) => {
             <h3>{secletedType?.itemName}</h3>
             <p>
               {secletedType?.itemDetails + "..."}{" "}
+            </p>
+            <div className="read-more">
               <Link
                 to={`/read/sector/?sectorName=${secletedItem?.name}&sectorId=${secletedType?.itemName}`}>
                 Read more
-              </Link>{" "}
-            </p>
+              </Link>
+            </div>
           </div>
           <div className="sector-details">
             <h3>Benifits</h3>

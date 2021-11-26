@@ -14,7 +14,9 @@ const Stigmi = () => {
                     <span>COMING SOON</span>
                 </header>
             </div>
-            <div className="ly-center"><MdKeyboardArrowDown className="arrow" /></div>
+            <div className="start-now">
+                <MdKeyboardArrowDown className="down-arrow" />
+            </div>
             <div className="stigmi-2cont">
                 <img src="https://i.ibb.co/55xSPx8/Group-9469-min.png" alt="" />
                 <span>Real Time Survey Data Processing Using Our Proprietary AI/ML Systems</span>

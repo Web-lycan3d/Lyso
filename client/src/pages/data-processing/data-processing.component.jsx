@@ -38,8 +38,8 @@ const Data_Processing = () => {
     setStep((cur) => cur + 1);
   };
   const nextButton = () => {
-    if (step >= 3) return undefined;
-    else if (step === 2)
+    if (step >= 2) return undefined;
+    else if (step === 1)
       return (
         <button
           type="button"
@@ -109,29 +109,33 @@ const Data_Processing = () => {
     <Fragment>
       <div className="data-first-container">
         <div className="data-pro-content">
-          <h1>DATA PROCESSING</h1>
+          <span>DATA</span>
+          <span>PROCESSING</span>
+
           <p>
             Save precious processing time and improve the accuracy of your drone
             survey with our Survey Data Processing services, now more efficient
-            than ever before. LYSO offers all-in-one drone survey solutions that
-            contain all the resources that you need to plan, visualize, process,
-            and analyze aerial data.
+            than ever before.
           </p>
+          <p>LYSO offers all-in-one drone survey solutions that
+            contain all the resources that you need to <span>plan, visualize, process,
+              and analyze aerial data.</span></p>
         </div>
         <div className="data-pro-content">
           <img
-            src="https://i.ibb.co/DD9pzTf/Upload-Illustration-2x-min.png"
+            src="https://i.ibb.co/LQ09HBs/image-processing20191202-22367-5vroda-min.png"
             alt="error"
           />
         </div>
       </div>
-      <div className="start-now">
-        <p>Start Now</p>
-        <MdKeyboardArrowDown className="down-arrow" />
+      <div className="data-mid-cont">
+          <img src="https://i.ibb.co/pyxX1Kc/Group-9473-min.png" alt="" />
+          <p>We convert raw survey data recording into customised output using our proprietary systems as per user requirements.</p>
       </div>
       <div className="data-second-container">
-        <div className="blue-div"></div>
-        <div className="white-div"></div>
+        <div className="white-div">
+          <img src="https://i.ibb.co/VT7gVjw/contourmapping-5-min.png" alt="" />
+        </div>
         <div className="form-container">
           <form className="form" action="">
             {step === 0 && (
@@ -156,44 +160,6 @@ const Data_Processing = () => {
               </div>
             )}
             {step === 1 && (
-              <div className="form-content">
-                <h1 className="data-h1 h12">Select Mode of File Processing</h1>
-                <div className="sec-cont">
-                  <div className="mode ly-dark">
-                    <img
-                      src="https://i.ibb.co/QYKKbzx/Group-5532-min.png"
-                      alt="error"
-                    />
-                    <h5>Expert Assistance</h5>
-                    <p>
-                      Utilizing this service, your survey data is securely given
-                      to in-house experts who have the experience to correctly
-                      calibrate and process the data. The processing is
-                      therefore handled professionally and is returned to you
-                      with all the necessary requirements.
-                    </p>
-                  </div>
-                  <div className="mode">
-                    <img
-                      src="https://i.ibb.co/w6Pfys1/Group-5531-min.png"
-                      alt=""
-                    />
-                    <h5>AI Data Processing</h5>
-                    <p>
-                      This soon-to-be featured service will involve quick and
-                      easy uploading of your data to an automated cloud data
-                      processing service that allows users to take advantage of
-                      artificial intelligence (AI) and deep learning to perform
-                      tasks and process the required information with
-                      instantaneous results.
-                    </p>
-                    <span>coming soon</span>
-                  </div>
-                </div>
-                {nextButton()}
-              </div>
-            )}
-            {step === 2 && (
               <div className="form-content">
                 <h1 className="data-h1 h13">Your Information</h1>
                 <div className="user-form">
@@ -288,7 +254,7 @@ const Data_Processing = () => {
                 {nextButton()}
               </div>
             )}
-            {step === 3 && (
+            {step === 2 && (
               <div className="form-content">
                 <div className="success-cont">
                   <img src="https://i.ibb.co/hYNwtd4/Group-5520-min.png" alt="error" id="imagestatus" />
