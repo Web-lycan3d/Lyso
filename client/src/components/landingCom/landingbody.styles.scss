@@ -6,15 +6,6 @@
 .landing-body-contents {
   padding: 3% 0 5%;
   width: 100%;
-  h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 0;
-    font-weight: 500;
-    span {
-      font-weight: 600;
-    }
-  }
 }
 .landing-body-items {
   width: 100%;
@@ -34,9 +25,23 @@
     position: relative;
     img {
       width: 100%;
+      object-fit: cover;
       height: 100%;
     }
+    .landing-b-img-text {
+      position: absolute;
+      top: 82%;
 
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(250, 250, 250, 0.932);
+      letter-spacing: 1.1px;
+      text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.466);
+      z-index: 50;
+      font-size: 1.42rem;
+      font-weight: 400;
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
     .landing-b-item-details {
       transition: all 0.5s ease-in-out;
       transform: translateY(100px);
@@ -48,16 +53,20 @@
       transform: translate(0%, -5%);
       color: black;
       z-index: 50;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
       p {
         font-weight: 400;
         line-height: 1.8;
         font-size: 1rem;
       }
       .item-tag {
+        align-self: flex-end;
         text-decoration: none;
         color: black;
-        pointer-events: none;
-        text-align: right;
+        width: 7rem;
+
         font-weight: 700;
         display: block;
         font-style: italic;
@@ -86,6 +95,9 @@
     &:hover {
       width: 320px;
     }
+    &:hover .landing-b-img-text {
+      letter-spacing: 1.5px;
+    }
     &:hover::before {
       opacity: 1;
     }
@@ -104,7 +116,7 @@
       transform: translateY(0);
     }
     &:active .landing-b-item-details .item-tag {
-      pointer-events: all;
+      pointer-events: fill;
     }
     &:focus {
       width: 320px;
@@ -117,12 +129,75 @@
       transform: translateY(0);
     }
     &:focus .landing-b-item-details .item-tag {
-      pointer-events: all;
+      pointer-events: fill;
     }
   }
 }
+
+.landing-map-container {
+  width: 100%;
+  height: auto;
+}
+.landing-map-contents {
+  padding: 0% 0% 5%;
+  width: 90%;
+  margin: 0 auto;
+  .landing-h2 {
+    font-size: 2.2rem;
+  }
+}
+.landing-map-flex {
+  padding: 10% 0 0;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.landing-map-text {
+  width: 40rem;
+  position: relative;
+  bottom: 3rem;
+  h2 {
+    font-weight: 700;
+    margin-top: 0;
+    font-size: 2rem;
+  }
+  span {
+    display: block;
+    margin: 1.8rem 0;
+
+    font-size: 0.95rem;
+    line-height: 2;
+  }
+  .custom-btn {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    width: 9.5rem;
+    padding: 0.35rem 1.1rem 0.4rem;
+  }
+  .landing-map-box {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(172, 172, 172);
+  }
+}
+
+.landing-map-image {
+  width: 60%;
+  height: 100%;
+  position: relative;
+  left: 5rem;
+  top: 1rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
 .landing-footer {
-  padding: 14% 5% 11%;
+  padding: 12% 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -171,30 +246,41 @@
     }
   }
 }
-.landing-footer {
-  padding: 12% 5%;
-  background-color: rgb(246, 248, 252);
-  margin-bottom: 5%;
-  position: relative;
-  .p-blog {
-    display: inline;
-    padding: 0.1rem 1.5rem 0.2rem;
-    font-size: 1.4rem;
-    background-color: #271aba;
-    color: white;
-    letter-spacing: 0.8px;
-    border-radius: 40px;
-    position: absolute;
-    top: -1rem;
-    left: 3rem;
-    margin: 0;
-  }
-}
 
 @media screen and (max-width: 1600px) {
   .landing-body-items {
     .landing-body-item {
       margin: 0;
     }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .landing-footer-left {
+    width: 80%;
+  }
+  .landing-map-contents {
+    width: 95%;
+  }
+  .landing-map-text {
+    width: 55%;
+    bottom: 0rem;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .landing-map-flex {
+    padding: 10% 0 8%;
+  }
+  .landing-map-text {
+    bottom: 1rem;
+    h2 {
+      font-size: 2rem;
+    }
+    span {
+      font-size: 0.9rem;
+    }
+  }
+  .landing-map-image {
+    left: 1rem;
+    width: 60%;
   }
 }

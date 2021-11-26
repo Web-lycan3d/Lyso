@@ -6,8 +6,8 @@ const LandingFooter = () => {
   return (
     <div className="landing-footer">
       <div className="landing-footer-left">
-        <h2>
-          WHY <span className="span-blue"> LYSO?</span>
+        <h2 className="landing-h2">
+          WHY <span className="span-blue landing-span"> LYSO?</span>
         </h2>
         <div className="landing-footer-box">
           <p>Faster Data Acquisition</p>
