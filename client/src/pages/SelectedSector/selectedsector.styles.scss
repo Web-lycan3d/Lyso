@@ -3,6 +3,7 @@
 .sel-sector-container {
   width: 100%;
   height: auto;
+  position: relative;
 }
 
 .sel-sector-contents {
@@ -28,7 +29,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  background-color: rgba(58, 57, 57, 0.301);
+  background-color: rgba(2, 2, 2, 0.445);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
@@ -109,7 +110,7 @@
   padding: 4% 6%;
   .sel-f-items {
     width: 100%;
-    margin: 5% auto 0;
+    margin: 3% auto 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,7 +122,8 @@
       flex-direction: column;
       justify-content: center;
       p {
-        font-size: 1.2rem;
+        margin: 0.85rem 0;
+        font-size: 1.4rem;
         font-weight: 600;
       }
     }
@@ -135,10 +137,51 @@
         left: 0;
         width: 3rem;
         height: 0.2rem;
-        background-color: rgb(37, 56, 230);
+        background-color: rgba(25, 25, 26, 0.658);
         content: "";
         border-radius: 20px;
       }
     }
+  }
+}
+.sel-loading-container {
+  position: absolute;
+  top: 0;
+  left: 00;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sel-spinner {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 0.25rem solid rgba(255, 255, 255, 0.2);
+    border-top-color: rgb(0, 0, 0);
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 0.5rem;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rot updating array inside ate(0deg);
+    border-top-color: rgb(0, 0, 0);
+  }
+  25% {
+    border-top-color: rgb(13, 111, 224);
+  }
+  50% {
+    border-top-color: rgb(13, 224, 108);
+  }
+  75% {
+    border-top-color: rgb(189, 50, 32);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top-color: rgb(0, 0, 0);
   }
 }
