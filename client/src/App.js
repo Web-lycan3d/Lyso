@@ -16,6 +16,8 @@ import Data_Processing from "./pages/data-processing/data-processing.component";
 import Survey from "./pages/survey/survey.component";
 import Stigmi from "./pages/stigmi/stigmi.component";
 import Selectedsector from "./pages/SelectedSector/Selectedsector";
+import AdminPanel from "./pages/Admin/AdminPanel";
+
 function App() {
   return (
     <Fragment>
@@ -30,6 +32,7 @@ function App() {
         <Route path="/survey" exact component={Survey} />
         <Route path="/stigmi" exact component={Stigmi} />
         <Route path="/read/sector/" exact component={Selectedsector} />
+        <Route path="/admin" exact component={AdminPanel} />
       </Switch>
       <Footer />
     </Fragment>
