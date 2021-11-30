@@ -2,7 +2,7 @@
 
 const mongoose = require("mongoose");
 
-const dataSchema = new mongoose.Schema(
+const ContactSchema = new mongoose.Schema(
   {
     name: String,
     email: String,
@@ -19,9 +19,9 @@ const dataSchema = new mongoose.Schema(
       key: String,
     },
     item_Id: String,
-  }, {
-  timestamps: true,
-});
-const DataP = mongoose.model("DataP", dataSchema);
+  },
+  { timestamps: true }
+);
+const Contact = mongoose.model("Contact", ContactSchema);
 
-module.exports = DataP;
+module.exports = Contact;

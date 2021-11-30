@@ -6,14 +6,16 @@ import { useForm } from "react-hook-form";
 import validator from "validator";
 import { FiUploadCloud } from "react-icons/fi";
 import { FileUpload } from "../../components/Fileupload";
-import { BsFillLightningChargeFill } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { BsFillLightningChargeFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import Api from "../../api/Api";
 
 const Data_Processing = () => {
   const [step, setStep] = React.useState(0);
   const [userFile, setUserFile] = useState("");
-  const [fileStatus, setfileStatus] = useState("Select a file to continue(.zip,.mp4,.avi,.wbem,.mkv is supported)");
+  const [fileStatus, setfileStatus] = useState(
+    "Select a file to continue(.zip,.mp4,.avi,.wbem,.mkv is supported)"
+  );
   const [phoneErr, setphoneErr] = useState("");
   const [fileupStatus, setfileupStatus] = useState(
     "Uploading and Saving Data please wait"
@@ -62,7 +64,7 @@ const Data_Processing = () => {
   const submitform = (userData) => {
     const validatePhone = validator.isMobilePhone(userData.phone, ["en-IN"]);
     if (validatePhone) {
-      setphoneErr("")
+      setphoneErr("");
       completeFormStep();
       s3.upload(
         {
@@ -97,7 +99,7 @@ const Data_Processing = () => {
         }
       });
     } else {
-      setphoneErr("Not valid")
+      setphoneErr("Not valid");
     }
   };
   const scrollDown = () =>
@@ -124,10 +126,14 @@ const Data_Processing = () => {
             survey with our Survey Data Processing services, now more efficient
             than ever before.
           </p>
-          <p>LYSO offers all-in-one drone survey solutions that
-            contain all the resources that you need to <span>plan, visualize, process,
-              and analyze aerial data.</span></p>
-          <button className="btn" onClick={scrollDown}><BsFillLightningChargeFill /> {" "}Get Started</button>
+          <p>
+            LYSO offers all-in-one drone survey solutions that contain all the
+            resources that you need to{" "}
+            <span>plan, visualize, process, and analyze aerial data.</span>
+          </p>
+          <button className="btn" onClick={scrollDown}>
+            <BsFillLightningChargeFill /> Get Started
+          </button>
         </div>
         <div className="data-pro-content">
           <img
@@ -138,7 +144,10 @@ const Data_Processing = () => {
       </div>
       <div className="data-mid-cont">
         <img src="https://i.ibb.co/pyxX1Kc/Group-9473-min.png" alt="" />
-        <p>We convert raw survey data recording into customised output using our proprietary systems as per user requirements.</p>
+        <p>
+          We convert raw survey data recording into customised output using our
+          proprietary systems as per user requirements.
+        </p>
       </div>
       <div className="data-second-container" ref={scrollRef}>
         <div className="white-div">
@@ -191,16 +200,16 @@ const Data_Processing = () => {
                       type="text"
                       placeholder="Full Name"
                       className="form-control"
-                      name="username"
-                      {...register("username", {
+                      name="name"
+                      {...register("name", {
                         required: {
                           value: true,
                           message: "Please enter your username",
                         },
                       })}
                     />
-                    {errors.username && (
-                      <p className="errors">{errors.username.message}</p>
+                    {errors.name && (
+                      <p className="errors">{errors.name.message}</p>
                     )}
                     <input
                       type="email"
@@ -265,7 +274,11 @@ const Data_Processing = () => {
             {step === 2 && (
               <div className="form-content">
                 <div className="success-cont">
-                  <img src="https://i.ibb.co/hYNwtd4/Group-5520-min.png" alt="error" id="imagestatus" />
+                  <img
+                    src="https://i.ibb.co/hYNwtd4/Group-5520-min.png"
+                    alt="error"
+                    id="imagestatus"
+                  />
                   <h1 className="data-h1">{fileupStatus}</h1>
                   <span className="data-upvalue"> </span>
                   <progress
