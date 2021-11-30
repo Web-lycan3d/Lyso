@@ -11,6 +11,8 @@ const FileSchema = new mongoose.Schema({
     Location: String,
     key: String,
   },
+}, {
+  timestamps : true,
 });
 const Terrain = mongoose.model("Terrain", FileSchema);
 

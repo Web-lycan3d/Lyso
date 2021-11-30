@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #466aff;
+    background: linear-gradient(140deg, #60B9F2 , #2269E9);
     width: 50%;
     padding: 2rem 4rem 1rem;
 
@@ -54,6 +54,37 @@
       margin: 0;
     }
 
+    .formsuccess {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 5rem 0 5rem;
+
+      img {
+        width: 20%;
+        height: auto;
+      }
+
+      span {
+        color: #000;
+        font-family: "Archivo", sans-serif;
+        text-align: center;
+        margin: 0;
+
+        &:first-child{
+          font-size: 40px !important;
+          padding: 1rem 0;
+          font-weight: 500;
+        }
+
+        &:nth-child(2){
+          font-size: 25px;
+          padding: 1rem 0;
+          font-weight: 200;
+        }
+      }
+    }
+
     .contact-form {
       width: 95%;
       display: flex;
@@ -89,14 +120,25 @@
       .inputlist1 {
         border: 0;
         border-bottom: 1px solid rgb(156, 156, 156);
-        color: #C8C8C8;
+        color: #c8c8c8;
         width: 80%;
+
+        &:focus,
+        &:active {
+          border-color: transparent;
+          border-bottom: 2px solid #1c87c9;
+        }
+      }
+
+      .phnerr {
+        font-size: 10px;
+        color: red;
       }
 
       .inputlist2 {
         border: 0;
         border-bottom: 1px solid rgb(156, 156, 156);
-        color: #C8C8C8;
+        color: #c8c8c8;
         width: 90%;
       }
 
@@ -117,33 +159,32 @@
         }
       }
     }
-    .contact-details{
+    .contact-details {
+      display: flex;
+      width: 60%;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 1rem;
+
+      .contact-content {
         display: flex;
-        width: 60%;
-        flex-direction: row;
+        width: 50%;
+        flex-direction: column;
         align-items: flex-start;
-        margin-top: 1rem;
+        justify-content: center;
 
-        .contact-content{
-            display: flex;
-            width: 50%;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-
-
-            span{
-                font-size: 14px;
-                color: #C8C8C8;
-                font-family: 'Poppins' , sans-serif;
-            }
-
-            p{
-                font-size: 14px;
-                color: #000;
-                font-family: 'Poppins' , sans-serif;
-            }
+        span {
+          font-size: 14px;
+          color: #c8c8c8;
+          font-family: "Poppins", sans-serif;
         }
+
+        p {
+          font-size: 14px;
+          color: #000;
+          font-family: "Poppins", sans-serif;
+        }
+      }
     }
   }
 }

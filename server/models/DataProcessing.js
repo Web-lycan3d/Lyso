@@ -13,6 +13,8 @@ const dataSchema = new mongoose.Schema({
     Location: String,
     key: String,
   },
+}, {
+  timestamps: true,
 });
 const DataP = mongoose.model("DataP", dataSchema);
 

@@ -44,5 +44,44 @@
   .no-dec {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-span2 {
+    display: inline-block;
+    font-weight: 400;
+    color: rgb(150, 150, 150);
+    font-size: 10px;
+  }
+  .footer-right {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    .footer-right-top {
+      display: flex;
+      border-top: 1px solid rgb(150, 150, 150);
+      padding-top: 0.5rem;
+    }
+    .footer-right-bottom {
+      display: flex;
+      justify-content: space-evenly;
+      padding-bottom: 0.5rem;
+      .span2 {
+        border-right: 1px solid rgb(197, 197, 197);
+        letter-spacing: 0.5px;
+        font-size: 10px;
+      }
+      .span2:last-child {
+        border-right: 0;
+      }
+      .no-dec {
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+      }
+    }
   }
 }

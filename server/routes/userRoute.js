@@ -5,6 +5,7 @@ const express = require("express");
 const router = express.Router();
 const DataP = require("../models/DataProcessing");
 const Terrain = require("../models/Terrainmodel");
+const userContacted = require("../models/ContactModel")
 
 router.post("/data", async (req, res) => {
   // fs.readFile(req.files.file.path, (err, data) => {
@@ -30,4 +31,12 @@ router.post("/data/process", async (req, res) => {
     console.log(error);
   }
 });
+router.post("/contactuser" , async (req, res) => {
+  try {
+    const newFile = new userContacted(req.body.contactData);
+    await newFile.save();
+  } catch (error) {
+     console.log(error)
+  }
+})
 module.exports = router;
