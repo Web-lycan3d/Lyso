@@ -25,6 +25,12 @@ const LandingMap = () => {
               Terrain Model (DTM) and you are subsequently provided with your
               very own 3D printed terrain.
             </span>
+            <div className="landing-map-image landing-mapmobileimg">
+              <img
+                src="https://i.ibb.co/0h7mmLn/terrain-map-indonesia-3d-map-generator-atlas-1024x742.webp"
+                alt="map"
+              />
+            </div>
             <div className="landing-map-box">
               <img src={landingmap} alt="map" />
               <div className="landing-map-box-text">
@@ -34,7 +40,7 @@ const LandingMap = () => {
                 </span>
                 <span className="landing-map-b-span">Deliver</span>
               </div>
-            </div>{" "}
+            </div>
             <button className="custom-btn">
               <AiFillThunderbolt className="thunder-icon" />
               Get Started
