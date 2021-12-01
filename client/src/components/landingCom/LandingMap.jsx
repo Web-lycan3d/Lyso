@@ -2,6 +2,7 @@
 
 import React from "react";
 import { AiFillThunderbolt } from "react-icons/ai";
+import landingmap from "./g.svg";
 
 const LandingMap = () => {
   return (
@@ -14,17 +15,25 @@ const LandingMap = () => {
         </h2>
         <div className="landing-map-flex">
           <div className="landing-map-text">
-            <h2>Manufacture Physical models of your survey data in a breeze</h2>
+            <h2>Create physical models of your survey data in no time!</h2>
             <span>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Bibendum est ultricies integer quis. Iaculis urna id volutpat
-              lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac
-              odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus
-              euismod.
+              We offer you the ability to scan your survey data and use it to
+              create three dimensional scaled models for visualisation and
+              communication. The application of 3d modeling by Lyso involves
+              manipulating the point cloud data into a 3D model suitable for
+              print. The point cloud is turned into a surface as a Digital
+              Terrain Model (DTM) and you are subsequently provided with your
+              very own 3D printed terrain.
             </span>
             <div className="landing-map-box">
-              <img src="" alt="" />
+              <img src={landingmap} alt="map" />
+              <div className="landing-map-box-text">
+                <span className="landing-map-b-span">Upload</span>
+                <span className="landing-map-b-span">
+                  Optimise & Manufacture
+                </span>
+                <span className="landing-map-b-span">Deliver</span>
+              </div>
             </div>{" "}
             <button className="custom-btn">
               <AiFillThunderbolt className="thunder-icon" />

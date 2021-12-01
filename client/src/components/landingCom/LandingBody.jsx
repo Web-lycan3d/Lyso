@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import landingmap from "./g.svg";
 import Landindbodyimg from "./Landindbodyimg";
 import "./landingbody.styles.scss";
 

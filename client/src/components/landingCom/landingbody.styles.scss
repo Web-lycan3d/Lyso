@@ -177,9 +177,27 @@
     padding: 0.35rem 1.1rem 0.4rem;
   }
   .landing-map-box {
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
     width: 100%;
     height: 120px;
-    background-color: rgb(172, 172, 172);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .landing-map-box-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      bottom: 2rem;
+      font-size: 0.75rem;
+      .landing-map-b-span {
+        font-weight: 500;
+        margin: 0.9rem 0;
+      }
+    }
   }
 }
 
@@ -282,5 +300,156 @@
   .landing-map-image {
     left: 1rem;
     width: 60%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .landing-body-items {
+    flex-direction: column;
+    .landing-body-item {
+      width: 90%;
+      height: 220px;
+      margin: 0 auto;
+      &:hover {
+        width: 90%;
+        height: 300px;
+      }
+
+      &:active {
+        width: 90%;
+        height: 300px;
+      }
+
+      &:focus {
+        width: 90%;
+        height: 300px;
+      }
+    }
+  }
+  .landing-map-flex {
+    width: 90%;
+    padding: 12% 0 5%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .landing-map-text {
+    width: 100%;
+    span {
+      margin-bottom: 2.2rem;
+    }
+  }
+  .landing-map-image {
+    width: 100%;
+    left: 0;
+  }
+}
+@media screen and (max-width: 720px) {
+  .landing-h2 {
+    font-size: 1.9rem;
+    padding-bottom: 5%;
+  }
+  .landing-map-contents {
+    .landing-h2 {
+      font-size: 1.8rem;
+      padding-bottom: 3%;
+    }
+  }
+  .landing-map-flex {
+    width: 92%;
+
+    flex-direction: column;
+  }
+  .landing-body-items {
+    .landing-body-item {
+      width: 90%;
+      height: 180px;
+
+      &:hover {
+        width: 90%;
+        height: 300px;
+      }
+      &:hover .landing-b-img-text {
+        top: 80%;
+      }
+      &:active {
+        width: 90%;
+        height: 300px;
+      }
+
+      &:focus {
+        width: 90%;
+        height: 300px;
+      }
+      .landing-b-img-text {
+        top: 40%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 520px) {
+  .landing-body-items {
+    .landing-body-item {
+      width: 90%;
+      height: 180px;
+      .landing-b-item-details {
+        p {
+          font-size: 0.9rem;
+        }
+      }
+      &:hover {
+        width: 90%;
+        height: 300px;
+      }
+      &:hover .landing-b-img-text {
+        top: 83%;
+      }
+      &:active {
+        width: 90%;
+        height: 300px;
+      }
+
+      &:focus {
+        width: 90%;
+        height: 300px;
+      }
+      .landing-b-img-text {
+        top: 40%;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .landing-footer {
+    padding: 15% 2%;
+
+    background: url("https://i.ibb.co/vDDvBc8/Mask-Group-58.webp") no-repeat
+      center;
+  }
+  .landing-footer-left {
+    padding-top: 5%;
+    .landing-h2 {
+      margin-top: 3rem;
+      font-size: 2.2rem;
+    }
+    width: 100%;
+    .landing-footer-box {
+      width: 100%;
+      margin-top: 1rem;
+      margin-right: 0;
+    }
+  }
+  .landing-map-text {
+    width: 100%;
+    h2 {
+      font-size: 1.7rem;
+    }
+    .landing-map-box {
+      img {
+        object-fit: contain;
+      }
+      .landing-map-box-text {
+        .landing-map-b-span {
+          font-size: 0.75rem;
+        }
+      }
+    }
   }
 }

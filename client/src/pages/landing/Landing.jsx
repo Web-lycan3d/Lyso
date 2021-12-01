@@ -28,9 +28,8 @@ const Landing = () => {
                 DATA <span> PROCESSING </span>
               </h2>
               <button className="custom-btn">
-                {" "}
                 <AiFillThunderbolt className="thunder-icon" />
-                Know more
+                Start now
               </button>
             </div>
             <p className="vertical-line"></p>
