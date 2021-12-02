@@ -44,3 +44,48 @@
     font-weight: 600;
   }
 }
+//loadercss
+.home-loader-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.781);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-loader-spinner {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: 0.3rem solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgb(0, 0, 0);
+  animation: spin 0.9s infinite linear;
+  margin-right: 0.5rem;
+
+  // width: 100px;
+  // height: 100px;
+  // background-color: black;
+}
+@keyframes spin {
+  0% {
+    transform: rot updating array inside ate(0deg);
+    border-top-color: rgb(0, 0, 0);
+  }
+  25% {
+    border-top-color: rgb(5, 121, 253);
+  }
+  50% {
+    border-top-color: rgb(5, 167, 78);
+  }
+  75% {
+    border-top-color: rgb(189, 50, 32);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top-color: rgb(0, 0, 0);
+  }
+}

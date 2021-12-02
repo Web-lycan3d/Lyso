@@ -7,10 +7,13 @@ import validator from "validator";
 import { FiUploadCloud } from "react-icons/fi";
 import { FileUpload } from "../../components/Fileupload";
 import { BsFillLightningChargeFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Api from "../../api/Api";
+import InternetStaus from "../../components/InternetStaus";
 
 const Data_Processing = () => {
+  InternetStaus();
+
   const [step, setStep] = React.useState(0);
   const [userFile, setUserFile] = useState("");
   const [fileStatus, setfileStatus] = useState(
@@ -293,6 +296,7 @@ const Data_Processing = () => {
           </form>
         </div>
       </div>
+      <Toaster />
     </Fragment>
   );
 };

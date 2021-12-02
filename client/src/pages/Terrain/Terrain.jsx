@@ -7,11 +7,14 @@ import Api from "../../api/Api";
 import { FileUpload } from "../../components/Fileupload";
 import { useHistory } from "react-router-dom";
 import { AiFillThunderbolt } from "react-icons/ai";
-
+import { Toaster } from "react-hot-toast";
+import InternetStaus from "../../components/InternetStaus";
 //initlalizing s3 bucket
 const s3 = FileUpload();
 
 const Terrain = () => {
+  InternetStaus();
+
   const ref = useRef();
   const ref2 = useRef();
   const history = useHistory();
@@ -78,11 +81,20 @@ const Terrain = () => {
     <div className="terrain-container">
       <div className="terrain-contents">
         <div className="terrain-header">
-          <img src="https://i.ibb.co/cvgZswQ/Group-9467.webp" alt="" />
+          <img
+            className="terrain-img"
+            src="https://i.ibb.co/cvgZswQ/Group-9467.webp"
+            alt="err"
+          />
           <div className="terrain-header-details">
             <h2>
               3D MODEL <br /> <b> PRINTING</b>{" "}
             </h2>
+            <img
+              className="terrain-mobile-img"
+              src="https://i.ibb.co/cvgZswQ/Group-9467.webp"
+              alt="err"
+            />
             <p>
               Through the exciting advancements made in 3D printing technology,
               we can now bring your survey data to life! By scanning your data,
@@ -212,6 +224,7 @@ const Terrain = () => {
           </form>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

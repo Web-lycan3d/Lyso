@@ -1,13 +1,17 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect } from "react";
 import "./landing.styles.scss";
 import { AiFillThunderbolt } from "react-icons/ai";
 import LandingBody from "../../components/landingCom/LandingBody";
 import LandingFooter from "../../components/landingCom/LandingFooter";
 import LandingMap from "../../components/landingCom/LandingMap";
+import { Toaster } from "react-hot-toast";
+import InternetStaus from "../../components/InternetStaus";
 
 const Landing = () => {
+  InternetStaus();
+
   const query = window.Qs.parse(window.location.search, {
     ignoreQueryPrefix: true,
   });
@@ -47,6 +51,7 @@ const Landing = () => {
       <LandingBody />
       <LandingMap />
       <LandingFooter />
+      <Toaster />
     </React.Fragment>
   );
 };
