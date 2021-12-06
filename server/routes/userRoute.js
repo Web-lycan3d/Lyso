@@ -5,7 +5,7 @@ const express = require("express");
 const router = express.Router();
 const DataP = require("../models/DataProcessing");
 const Terrain = require("../models/Terrainmodel");
-const userContacted = require("../models/ContactModel")
+const userContacted = require("../models/ContactModel");
 const { nanoid } = require("nanoid");
 
 router.post("/data", async (req, res) => {
@@ -15,6 +15,7 @@ router.post("/data", async (req, res) => {
 
   const itemId = nanoid();
   req.body.userData.item_Id = itemId;
+  req.body.userData.date = new Date().toLocaleString();
 
   try {
     const newFile = new Terrain(req.body.userData);
@@ -30,6 +31,8 @@ router.post("/data/process", async (req, res) => {
 
   const itemId = nanoid();
   req.body.userData.item_Id = itemId;
+  req.body.userData.date = new Date().toLocaleString();
+
   try {
     const newFile = new DataP(req.body.userData);
     await newFile.save();
@@ -92,12 +95,12 @@ router.patch("/update/data", async (req, res) => {
     }
   }
 });
-router.post("/contactuser" , async (req, res) => {
+router.post("/contactuser", async (req, res) => {
   try {
     const newFile = new userContacted(req.body.contactData);
     await newFile.save();
   } catch (error) {
-     console.log(error)
+    console.log(error);
   }
-})
+});
 module.exports = router;
