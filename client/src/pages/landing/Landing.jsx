@@ -8,7 +8,7 @@ import LandingFooter from "../../components/landingCom/LandingFooter";
 import LandingMap from "../../components/landingCom/LandingMap";
 import { Toaster } from "react-hot-toast";
 import InternetStaus from "../../components/InternetStaus";
-
+import { motion } from "framer-motion";
 const Landing = () => {
   InternetStaus();
 
@@ -24,9 +24,17 @@ const Landing = () => {
 
   return (
     <React.Fragment>
-      <div className="landing-container">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="landing-container">
         <div className="landing-contents">
-          <div className="landing-header">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="landing-header">
             <div className="landing-text-box">
               <h2>
                 DATA <span> PROCESSING </span>
@@ -45,9 +53,9 @@ const Landing = () => {
                 <AiFillThunderbolt className="thunder-icon" /> Know more
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
       <LandingBody />
       <LandingMap />
       <LandingFooter />

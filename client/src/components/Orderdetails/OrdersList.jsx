@@ -13,8 +13,6 @@ const OrdersList = ({ item, itemS }) => {
   }, []);
 
   const handleSubmit = async (itemID) => {
-    console.log(itemStatus);
-    console.log(itemID);
     const itemdata = { itemID, itemStatus };
     if (!itemStatus) {
       seterr("Change to update");
@@ -41,6 +39,9 @@ const OrdersList = ({ item, itemS }) => {
           </p>
           <p>
             Phone no : <b>{item.phone}</b>{" "}
+          </p>{" "}
+          <p>
+            Date : <b>{item.date}</b>{" "}
           </p>
           <p>
             Address : <b> {item.address}</b>

@@ -48,9 +48,9 @@
       opacity: 0;
       padding: 0.8rem 0.9rem;
       position: absolute;
-      top: 5%;
+      top: 1%;
       left: 0%;
-      transform: translate(0%, -5%);
+      transform: translate(0%, -2%);
       color: black;
       z-index: 50;
       display: flex;
@@ -59,7 +59,7 @@
       p {
         font-weight: 400;
         line-height: 1.8;
-        font-size: 1rem;
+        font-size: 0.9rem;
       }
       .item-tag {
         align-self: flex-end;
@@ -401,25 +401,30 @@
       width: 90%;
       height: 180px;
       .landing-b-item-details {
+        top: 0;
         p {
           font-size: 0.9rem;
+        }
+        a {
+          position: relative;
+          bottom: 0.8rem;
         }
       }
       &:hover {
         width: 90%;
-        height: 300px;
+        height: 400px;
       }
       &:hover .landing-b-img-text {
-        top: 83%;
+        top: 90%;
       }
       &:active {
         width: 90%;
-        height: 300px;
+        height: 400px;
       }
 
       &:focus {
         width: 90%;
-        height: 300px;
+        height: 400px;
       }
       .landing-b-img-text {
         top: 40%;

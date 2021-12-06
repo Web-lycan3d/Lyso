@@ -116,7 +116,7 @@
     bottom: 1.8rem;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 720px) {
   .landing-header {
     width: 100%;
 
@@ -134,7 +134,7 @@
     .custom-btn {
       width: 9rem;
       margin: 0.2rem auto;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       padding: 0.38rem 1.35rem;
     }
   }

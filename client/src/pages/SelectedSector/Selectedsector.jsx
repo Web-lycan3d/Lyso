@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Sectors } from "../../components/Sectors";
 import "./selectedsector.styles.scss";
+import { motion } from "framer-motion";
 
 const Selectedsector = () => {
   const [secletedItem, setsecletedItem] = useState("");
@@ -37,15 +38,19 @@ const Selectedsector = () => {
           <div className="sel-spinner"></div>
         </div>
       ) : (
-        <div className="sel-sector-contents">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="sel-sector-contents">
           <div
             className="sel-header"
             style={{
               background: `url(${secletedType?.mainBg}) no-repeat center`,
             }}>
-            {/* <div className="sel-header-img">
-            <img src="" alt="" />
-          </div> */}
+            <div className="sel-header-img">
+              <img src="" alt="" />
+            </div>
             <div className="sel-header-details">
               <h2 className="sel-h2">{secletedType?.itemName}</h2>
               <p>{secletedType?.allDetails}</p>
@@ -65,11 +70,13 @@ const Selectedsector = () => {
               <span>{secletedType?.application}</span>
             </div>
             <div className="sel-sector-img">
+              {" "}
+              <h2 className="sel-h2 mobile-h2">Application</h2>
               <img src={secletedType?.imgUrl} alt="err" />
             </div>
           </div>
           <div className="sel-footer">
-            <h2 className="sel-h2">Benefits</h2>
+            <h2 className="sel-h2">Deliverables</h2>
             <div className="sel-f-items">
               <div className="sel-f-item-align">
                 {secletedItem?.details?.map(
@@ -105,7 +112,7 @@ const Selectedsector = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );

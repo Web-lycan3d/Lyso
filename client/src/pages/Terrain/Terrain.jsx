@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { Toaster } from "react-hot-toast";
 import InternetStaus from "../../components/InternetStaus";
+import { motion } from "framer-motion";
 //initlalizing s3 bucket
 const s3 = FileUpload();
 
@@ -65,9 +66,9 @@ const Terrain = () => {
         if (uploaded === 100) {
           setFileErr("File uploaded successfully");
           ref2.current.setAttribute("disabled", false);
-          setTimeout(() => {
-            history.push("/?uploaded=" + true);
-          }, 2000);
+          // setTimeout(() => {
+          //   history.push("/?uploaded=" + true);
+          // }, 2000);
         } else {
           ref2.current.setAttribute("disabled", true);
           setFileErr("Uploading Please wait");
@@ -81,12 +82,19 @@ const Terrain = () => {
     <div className="terrain-container">
       <div className="terrain-contents">
         <div className="terrain-header">
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
             className="terrain-img"
             src="https://i.ibb.co/cvgZswQ/Group-9467.webp"
             alt="err"
           />
-          <div className="terrain-header-details">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="terrain-header-details">
             <h2>
               3D MODEL <br /> <b> PRINTING</b>{" "}
             </h2>
@@ -106,7 +114,7 @@ const Terrain = () => {
             <button className="custom-btn">
               <AiFillThunderbolt className="thunder-icon" /> Print Now
             </button>
-          </div>
+          </motion.div>
         </div>
         <div className="terrain-body">
           <img src="https://i.ibb.co/cYgjSqp/Group-9466.webp" alt="" />

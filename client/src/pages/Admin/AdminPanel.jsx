@@ -25,6 +25,7 @@ const AdminPanel = () => {
 
   const fetchUserData = async () => {
     const { data } = await Api.get("/user/post/data");
+    console.log(data);
     setTerrData(data.terrData);
     setDataProcess(data.dataProcess);
   };

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-
+import { motion } from "framer-motion";
 import { Sectors } from "../../components/Sectors";
 import "./sector.styles.scss";
 
@@ -33,14 +33,28 @@ const Sector = (props) => {
   }, [secletedItem, query.type]);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.6 }}
       className="sector-container"
-      style={{ background: `url(${secletedType?.bg}) no-repeat center` }}>
-      {/* <h2>{secletedItem.name}</h2> */}
+      style={{
+        backgroundImage: `url(${secletedType?.bg})`,
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "initial",
+        backgroundOrigin: "initial",
+        backgroundClip: "initial",
+        backgroundColor: "initial",
+      }}>
+      <h2>{secletedItem.name}</h2>
       <div className="sector-contents">
-        <div className="sector-sidebar">
+        <motion.div className="sector-sidebar">
           {secletedItem?.types?.map((data, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: index / 1.8 }}
               className={
                 data.itemName === query.type
                   ? "sector-sidebar-box sector-sidebar-box-bg"
@@ -50,34 +64,49 @@ const Sector = (props) => {
               <Link to={`/sector/${id}?type=${data.itemName}`}>
                 <span>{data.itemName}</span>
               </Link>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <div className="sector-items">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="sector-items">
           <div className="sector-img">
             <img src={secletedType?.imgUrl} alt="sector img" />
           </div>
-          <div className="sector-item-details">
-            <h3>{secletedType?.itemName}</h3>
-            <p>
-              {secletedType?.itemDetails + "..."}{" "}
-            </p>
-            <div className="read-more">
-              <Link
-                to={`/read/sector/?sectorName=${secletedItem?.name}&sectorId=${secletedType?.itemName}`}>
-                Read more
-              </Link>
+          <div className="sector-item-flex">
+            <div className="sector-item-details">
+              <h3>{secletedType?.itemName}</h3>
+              <p>{secletedType?.itemDetails + "..."} </p>
+              <div className="read-more">
+                <Link
+                  to={`/read/sector/?sectorName=${secletedItem?.name}&sectorId=${secletedType?.itemName}`}>
+                  Read more
+                </Link>
+              </div>
+            </div>
+            <div className="sector-details">
+              <h3>Benifits</h3>
+              <div className="sector-details-flex">
+                <div className="sector-detail-p">
+                  {secletedItem?.details?.map(
+                    (data, index) =>
+                      index < 3 && <p key={index}>{data.desp} </p>
+                  )}
+                </div>
+                <div className="sector-detail-p">
+                  {secletedItem?.details?.map(
+                    (data, index) =>
+                      index >= 3 && <p key={index}>{data.desp} </p>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
-          <div className="sector-details">
-            <h3>Benifits</h3>
-            {secletedItem?.details?.map((data, index) => (
-              <p key={index}>{data.desp} </p>
-            ))}
-          </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

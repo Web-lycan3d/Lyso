@@ -10,6 +10,7 @@ import { BsFillLightningChargeFill } from "react-icons/bs";
 import { Toaster } from "react-hot-toast";
 import Api from "../../api/Api";
 import InternetStaus from "../../components/InternetStaus";
+import { motion } from "framer-motion";
 
 const Data_Processing = () => {
   InternetStaus();
@@ -119,7 +120,11 @@ const Data_Processing = () => {
   };
   return (
     <Fragment>
-      <div className="data-first-container">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="data-first-container">
         <div className="data-pro-content">
           <span>DATA</span>
           <span>PROCESSING</span>
@@ -144,7 +149,7 @@ const Data_Processing = () => {
             alt="error"
           />
         </div>
-      </div>
+      </motion.div>
       <div className="data-mid-cont">
         <img src="https://i.ibb.co/pyxX1Kc/Group-9473-min.png" alt="" />
         <p>
