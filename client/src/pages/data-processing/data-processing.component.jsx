@@ -129,6 +129,12 @@ const Data_Processing = () => {
           <span>DATA</span>
           <span>PROCESSING</span>
 
+          <div className="data-p-img-mob">
+            <img
+              src="https://i.ibb.co/LQ09HBs/image-processing20191202-22367-5vroda-min.png"
+              alt="error"
+            />
+          </div>
           <p>
             Save precious processing time and improve the accuracy of your drone
             survey with our Survey Data Processing services, now more efficient
@@ -143,7 +149,7 @@ const Data_Processing = () => {
             <BsFillLightningChargeFill /> Get Started
           </button>
         </div>
-        <div className="data-pro-content">
+        <div className="data-p-img-desk">
           <img
             src="https://i.ibb.co/LQ09HBs/image-processing20191202-22367-5vroda-min.png"
             alt="error"
@@ -153,8 +159,12 @@ const Data_Processing = () => {
       <div className="data-mid-cont">
         <img src="https://i.ibb.co/pyxX1Kc/Group-9473-min.png" alt="" />
         <p>
-          We convert raw survey data recording into customised output using our
-          proprietary systems as per user requirements.
+          Based on your requirements, we transform raw survey data into
+          customized outputs using our proprietary systems thereby allowing you
+          to craft your vision into reality. Our data processing abilities
+          enable the generation of very accurate and high-resolution results
+          that are essential for detailed analysis and planning in any drone
+          survey project.
         </p>
       </div>
       <div className="data-second-container" ref={scrollRef}>
