@@ -6,7 +6,7 @@ const backendUrl = () => {
   if (process.env.NODE_ENV === "development") {
     return "http://localhost:4000";
   } else {
-    return " ";
+    return "https://lysobackend.herokuapp.com";
   }
 };
 

@@ -30,22 +30,38 @@ const OrdersList = ({ item, itemS }) => {
     <div className="orderdetails-box">
       <div className="orderdetails-contents">
         <div className="orderdetails-userdetails">
-          <h2>{item.name}</h2>{" "}
-          <p>
-            id : <b> {item.item_Id}</b>
-          </p>
+          {item.name && <h2>{item.name}</h2>}
+          {item.firstname && (
+            <p>
+              firstname : <b> {item.firstname}</b>
+            </p>
+          )}
+          {item.lastname && (
+            <p>
+              lastname : <b> {item.lastname}</b>
+            </p>
+          )}
+          {item.item_Id && (
+            <p>
+              id : <b> {item.item_Id}</b>
+            </p>
+          )}
           <p>
             Email : <b>{item.email}</b>{" "}
           </p>
           <p>
             Phone no : <b>{item.phone}</b>{" "}
           </p>{" "}
-          <p>
-            Date : <b>{item.date}</b>{" "}
-          </p>
-          <p>
-            Address : <b> {item.address}</b>
-          </p>{" "}
+          {item.date && (
+            <p>
+              Date : <b>{item.date}</b>{" "}
+            </p>
+          )}
+          {item.address && (
+            <p>
+              Address : <b> {item.address}</b>
+            </p>
+          )}
           {item.Instruction && (
             <p>
               Instruction : <b> {item.Instruction}</b>
@@ -56,41 +72,45 @@ const OrdersList = ({ item, itemS }) => {
               ProjectName : <b> {item.projectName}</b>
             </p>
           )}
-          <p>
-            src :{" "}
-            <b>
-              <Link
-                to={{
-                  pathname: item.Objectdetails.Location,
-                }}
-                target="_blank">
-                {item.Objectdetails.Location}
-              </Link>
-            </b>
-          </p>
+          {item.Objectdetails && (
+            <p>
+              src :{" "}
+              <b>
+                <Link
+                  to={{
+                    pathname: item.Objectdetails.Location,
+                  }}
+                  target="_blank">
+                  {item.Objectdetails.Location}
+                </Link>
+              </b>
+            </p>
+          )}
         </div>
-        <div className="orderdetails-select">
-          <form
-            className="admin-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSubmit(item.item_Id);
-            }}>
-            <select
-              required
-              name="status"
-              onChange={(e) => setItemStatus(e.target.value)}>
-              <option value="pending" selected={err === "pending" && true}>
-                Pending
-              </option>
-              <option value="done" selected={err === "done" && true}>
-                Done
-              </option>
-            </select>
-            <span> status : {err}</span>
-            <button className="custom-btn">Submit</button>
-          </form>
-        </div>
+        {!item.firstname && (
+          <div className="orderdetails-select">
+            <form
+              className="admin-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit(item.item_Id);
+              }}>
+              <select
+                required
+                name="status"
+                onChange={(e) => setItemStatus(e.target.value)}>
+                <option value="pending" selected={err === "pending" && true}>
+                  Pending
+                </option>
+                <option value="done" selected={err === "done" && true}>
+                  Done
+                </option>
+              </select>
+              <span> status : {err}</span>
+              <button className="custom-btn">Submit</button>
+            </form>
+          </div>
+        )}
       </div>
     </div>
   );

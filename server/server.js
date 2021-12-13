@@ -15,6 +15,6 @@ app.use(express.json());
 app.use("/", require("./routes/homeRoute"));
 app.use("/user", require("./routes/userRoute"));
 
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log("server is running in port " + port);
 });

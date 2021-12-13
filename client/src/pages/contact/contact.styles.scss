@@ -1,3 +1,5 @@
+/** @format */
+
 .contact-container {
   display: flex;
   flex-direction: row;
@@ -121,7 +123,8 @@
         border: 0;
         border-bottom: 1px solid rgb(156, 156, 156);
         color: #c8c8c8;
-        width: 80%;
+        width: 100%;
+        padding: 0.4rem 0.2rem;
 
         &:focus,
         &:active {
@@ -188,7 +191,21 @@
     }
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 1050px) {
+  .contact-container {
+    .contact-left {
+      h1 {
+        width: 90% !important;
+        font-size: 2.8rem;
+      }
+      img {
+        margin-top: 1.5rem;
+        width: 80%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
   .contact-container {
     display: flex;
     flex-direction: column;
@@ -203,16 +220,12 @@
     align-items: center;
     background: linear-gradient(140deg, #60b9f2, #2269e9);
     width: initial;
-    padding: 2rem 1rem 1rem;
-  }
-  .contact-container .contact-left h1 {
-    font-size: 35px;
-    text-align: left;
-  }
-  .contact-container .contact-left img {
-    margin-top: 1.5rem;
-    width: 80%;
-    margin-bottom: 1.5rem;
+    padding: 2rem 1rem 3rem;
+    img {
+      margin-top: 1.5rem;
+      width: 35%;
+      height: 60%;
+    }
   }
   .contact-container .contact-right {
     padding: 2rem 1rem 1rem;
@@ -228,6 +241,34 @@
     align-items: flex-start;
     margin-top: 1rem;
   }
+  .contact-container .contact-right {
+    padding: 2rem 1rem 1rem;
+    width: initial;
+  }
+  .contact-container .contact-right h2 {
+    font-size: 35px;
+  }
+  .contact-container .contact-right .contact-details {
+    display: flex;
+    width: 95%;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .contact-container .contact-left h1 {
+    font-size: 35px;
+    width: 85% !important;
+    text-align: left;
+  }
+  .contact-container .contact-left img {
+    margin-top: 1.5rem;
+    width: 70%;
+    margin-bottom: 1.5rem;
+  }
+
   .contact-container .contact-right .contact-details .contact-content span {
     font-size: 12px;
   }

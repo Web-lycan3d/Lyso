@@ -37,7 +37,8 @@
 
     p {
       padding: 0 0.6rem;
-      width: 100%;
+
+      width: 92%;
       font-size: 1.15rem;
       line-height: 1.8;
       font-family: "Archivo", sans-serif;
@@ -50,10 +51,12 @@
     }
   }
   .data-p-img-desk {
-    display: block;
+    display: flex;
+    justify-content: flex-end;
     img {
-      width: 100%;
+      width: 85%;
       height: 100%;
+      object-fit: contain;
     }
   }
   .data-p-img-mob {

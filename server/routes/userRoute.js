@@ -50,8 +50,9 @@ router.get("/post/data", async (req, res) => {
   try {
     const terrData = await Terrain.find({});
     const dataProcess = await DataP.find({});
+    const userContact = await userContacted.find({});
 
-    res.json({ terrData, dataProcess });
+    res.json({ terrData, dataProcess, userContact });
   } catch (error) {
     console.log(error);
   }

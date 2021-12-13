@@ -18,6 +18,7 @@ const AdminPanel = () => {
 
   const [terrData, setTerrData] = useState([]);
   const [Dataprocess, setDataProcess] = useState([]);
+  const [contactData, setcontactData] = useState([]);
 
   useEffect(() => {
     fetchUserData();
@@ -25,9 +26,10 @@ const AdminPanel = () => {
 
   const fetchUserData = async () => {
     const { data } = await Api.get("/user/post/data");
-    console.log(data);
+
     setTerrData(data.terrData);
     setDataProcess(data.dataProcess);
+    setcontactData(data.userContact);
   };
 
   return (
@@ -75,6 +77,8 @@ const AdminPanel = () => {
         <div layout className="admin-dashboard-content">
           {option === "terr" && <OrderDetails userData={terrData} />}
           {option === "data" && <OrderDetails userData={Dataprocess} />}
+          {option === "contact" && <OrderDetails userData={contactData} />}
+          {/* {option === "data" && <OrderDetails userData={Dataprocess} />} */}
           {/* {option === "terr" && <OrderDetails userData={terrData} />} */}
           {/* {!option
             ? UserData?.map((data) =>

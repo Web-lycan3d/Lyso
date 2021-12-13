@@ -31,6 +31,18 @@ const Selectedsector = () => {
     }, 500);
   }, [secletedItem]);
 
+  var dataAllDetails = secletedType?.allDetails
+    ?.split(",")
+    .map(function (allDetails, index) {
+      return <p key={index}>{allDetails}</p>;
+    });
+
+  var dataApplication = secletedType?.application
+    ?.split(",")
+    .map(function (allDetails, index) {
+      return <p key={index}>{allDetails}</p>;
+    });
+
   return (
     <div className="sel-sector-container">
       {loaderState ? (
@@ -53,21 +65,29 @@ const Selectedsector = () => {
             </div>
             <div className="sel-header-details">
               <h2 className="sel-h2">{secletedType?.itemName}</h2>
-              <p>{secletedType?.allDetails}</p>
-              <div className="sel-sector-service">
-                {/* {secletedType?.serviceList?.map((list) => (
-                <div className="sel-s-box" key={list.listId}>
-                  <img src={list.listImage} alt="err" />
-                  <span className="list-span">{list.listtext}</span>
-                </div>
-              ))} */}
+              <p>{dataAllDetails}</p>
+              <div className="sel-sector-service sel-sector-service-desk">
+                {secletedItem?.serviceList?.map((list) => (
+                  <div className="sel-s-box" key={list.listId}>
+                    <img src={list.listImage} alt="err" />
+                    <span className="list-span">{list.listtext}</span>
+                  </div>
+                ))}
               </div>
             </div>
+          </div>
+          <div className="sel-list-body">
+            {secletedItem?.serviceList?.map((list) => (
+              <div className="sel-list-box" key={list.listId}>
+                <img src={list.listImage} alt="err" />
+                <span className="list-span">{list.listtext}</span>
+              </div>
+            ))}
           </div>
           <div className="sel-body">
             <div className="sel-body-details">
               <h2 className="sel-h2">Application</h2>
-              <span>{secletedType?.application}</span>
+              <span>{dataApplication}</span>
             </div>
             <div className="sel-sector-img">
               {" "}

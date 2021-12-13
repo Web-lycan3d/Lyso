@@ -13,9 +13,11 @@
   overflow-x: hidden;
 }
 .sel-header {
-  min-height: 50rem;
+  min-height: 100vh;
 
   position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
 .sel-h2 {
   font-size: 2.5rem;
@@ -24,17 +26,15 @@
 }
 .sel-header-details {
   width: 50%;
-  height: 100%;
+  min-height: 100%;
 
-  position: absolute;
-  top: 0;
-  left: 50%;
   background-color: rgba(2, 2, 2, 0.445);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
 
   flex-direction: column;
+  padding-top: 5%;
   padding-left: 3%;
   color: white;
   .sel-h2 {
@@ -52,16 +52,20 @@
   }
   .sel-sector-service {
     width: 100%;
-    padding-top: 9%;
+    height: 100%;
+    padding-top: 5%;
+
     position: relative;
     top: 1rem;
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     .sel-s-box {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 0 1.8rem;
+      margin-left: 0;
       img {
         width: 140px;
       }
@@ -79,6 +83,31 @@
     }
   }
 }
+.sel-list-body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5% 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  display: none;
+  .sel-list-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 0.6rem;
+
+    img {
+      width: 140px;
+    }
+    .list-span {
+      position: relative;
+      bottom: 2rem;
+      color: rgb(0, 0, 0);
+    }
+  }
+}
 .sel-body {
   padding: 5% 6% 2%;
   display: flex;
@@ -89,6 +118,7 @@
 .sel-body-details {
   align-self: flex-start;
   width: 60%;
+
   span {
     display: block;
     padding-right: 0.9rem;
@@ -104,9 +134,10 @@
     display: none;
   }
   padding-top: 4%;
-  padding-right: 3%;
-  width: 280px;
-  height: 460px;
+  padding-right: 1%;
+  width: 330px;
+  height: 520px;
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.192));
   img {
     width: 100%;
     height: 100%;
@@ -202,25 +233,29 @@
     height: 50vh;
   }
   .sel-header-details {
-    position: absolute;
     width: 100%;
     left: initial;
-    top: 50%;
-    bottom: 0;
+
     height: auto;
     padding: 0.8rem 0;
-
+    padding-bottom: 2rem;
     .sel-h2 {
       padding-left: 1rem;
       margin-top: 1rem;
       margin-bottom: 0.5rem;
     }
     p {
-      padding-left: 1rem;
+      padding-left: 0.6rem;
       width: 95%;
       margin-top: 0.1rem;
       font-size: 0.9rem;
     }
+    .sel-sector-service-desk {
+      display: none;
+    }
+  }
+  .sel-list-body {
+    display: flex;
   }
   .sel-body {
     padding: 5% 6% 2%;

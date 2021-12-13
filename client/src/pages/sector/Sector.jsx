@@ -98,7 +98,13 @@ const Sector = (props) => {
                 <div className="sector-detail-p">
                   {secletedItem?.details?.map(
                     (data, index) =>
-                      index >= 3 && <p key={index}>{data.desp} </p>
+                      index >= 3 && index < 6 && <p key={index}>{data.desp} </p>
+                  )}
+                </div>
+                <div className="sector-detail-p">
+                  {secletedItem?.details?.map(
+                    (data, index) =>
+                      index >= 6 && <p key={index}>{data.desp} </p>
                   )}
                 </div>
               </div>
