@@ -53,7 +53,9 @@ const Survey = () => {
         </div>
       </div>
       <div className="survey-3cont">
-        <img src="https://i.ibb.co/KDPPHdc/Mask-Group-55-min.png" alt="" />
+        <div className="survey-3cont-img">
+          <img src="https://i.ibb.co/Y7hGjJf/Lyso-Mockup-min.png" alt="" />
+        </div>
         <div className="survey-3cont-content">
           <div className="flkjjb">
             <span>

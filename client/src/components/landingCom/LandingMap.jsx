@@ -3,8 +3,10 @@
 import React from "react";
 import { AiFillThunderbolt } from "react-icons/ai";
 import landingmap from "./g.svg";
+import {useHistory} from "react-router-dom";
 
 const LandingMap = () => {
+  const history = useHistory();
   return (
     <div className="landing-map-container">
       {/* check custom styles for button and h2 */}
@@ -41,7 +43,7 @@ const LandingMap = () => {
                 <span className="landing-map-b-span">Deliver</span>
               </div>
             </div>
-            <button className="custom-btn">
+            <button className="custom-btn" onClick={() => history.push('/terrain')}>
               <AiFillThunderbolt className="thunder-icon" />
               Get Started
             </button>{" "}
