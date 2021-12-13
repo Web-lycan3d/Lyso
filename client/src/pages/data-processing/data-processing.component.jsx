@@ -136,15 +136,13 @@ const Data_Processing = () => {
             />
           </div>
           <p>
-            Save precious processing time and improve the accuracy of your drone
-            survey with our Survey Data Processing services, now more efficient
-            than ever before.
+            LYSO provides specialized data processing services that include all the tools and resources that you need to{" "}
+            <span>plan, visualize, process and analyze your survey data.</span>
           </p>
           <p>
-            LYSO offers all-in-one drone survey solutions that contain all the
-            resources that you need to{" "}
-            <span>plan, visualize, process, and analyze aerial data.</span>
+            Our survey data processing solutions can help raise your operational efficiency by allowing you to achieve accuracy, save processing time and maintain quality on all your survey projects. At LYSO, we deliver more than just data. We provide our clients with practical applications and innovative solutions that sets us apart from others in the industry.
           </p>
+
           <button className="btn" onClick={scrollDown}>
             <BsFillLightningChargeFill /> Get Started
           </button>

@@ -138,7 +138,6 @@ const Terrain = () => {
           <form onSubmit={handleSubmit}>
             <img src="https://i.ibb.co/3y846Fg/Group-9468.webp" alt="" />
             <div className="terrain-footer-contents">
-              <span className="label-no">01</span>
               <label htmlFor="uploadfile">
                 <FiUploadCloud className="upload-icon" />
                 <p> Upload your file</p>
@@ -173,7 +172,6 @@ const Terrain = () => {
               />
             </div>
             <div className="terrain-footer-contents footer-2">
-              <span className="label-no">02</span>
               <p>Your Information</p>
 
               <input

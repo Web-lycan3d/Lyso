@@ -77,6 +77,7 @@
       text-align: left;
       padding-top: 2.8rem;
       line-height: 2rem;
+      font-weight: 600;
       letter-spacing: 0.2rem;
     }
   }
@@ -95,20 +96,28 @@
   }
 }
 .survey-3cont {
-  @include cont;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  .survey-3cont-img {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
 
   .survey-3cont-content {
     display: flex;
-    position: absolute;
-    top: 45%;
-    right: 1%;
-    width: 40%;
+    width: 45%;
+    justify-content: center;
     flex-direction: column;
 
     .flkjjb {
@@ -169,6 +178,7 @@
   }
   .survey-1cont header p {
     font-size: 12px;
+    letter-spacing: 1px;
   }
   .survey-2cont {
     display: flex;
@@ -191,13 +201,8 @@
   .survey-2cont .survey-2cont-content p {
     font-size: 12px;
   }
-  .survey-3cont .survey-3cont-content {
-    display: flex;
-    position: absolute;
-    top: 35%;
-    right: 1%;
-    width: 90%;
-    flex-direction: column;
+  .survey-4cont {
+    padding: 2rem 0rem;
   }
   .survey-4cont span {
     font-size: 20px;
@@ -205,6 +210,15 @@
     color: #466aff;
     font-weight: 400;
     text-align: center;
+  }
+  .survey-3cont {
+    flex-direction: column-reverse;
+  }
+  .survey-3cont .survey-3cont-img {
+    width: 95%;
+  }
+  .survey-3cont .survey-3cont-content {
+    width: 95%;
   }
   .survey-3cont .survey-3cont-content .flkjjb span {
     font-size: 20px;

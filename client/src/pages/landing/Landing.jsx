@@ -9,9 +9,10 @@ import LandingMap from "../../components/landingCom/LandingMap";
 import { Toaster } from "react-hot-toast";
 import InternetStaus from "../../components/InternetStaus";
 import { motion } from "framer-motion";
+import {useHistory} from "react-router-dom";
 const Landing = () => {
   InternetStaus();
-
+  const history = useHistory();
   const query = window.Qs.parse(window.location.search, {
     ignoreQueryPrefix: true,
   });
@@ -39,7 +40,7 @@ const Landing = () => {
               <h2>
                 DATA <span> PROCESSING </span>
               </h2>
-              <button className="custom-btn">
+              <button className="custom-btn" onClick={() => history.push('/data_processing')}>
                 <AiFillThunderbolt className="thunder-icon" />
                 Start now
               </button>
@@ -49,7 +50,7 @@ const Landing = () => {
               <h2>
                 SURVEY <span> SERVICES </span>
               </h2>
-              <button className="custom-btn">
+              <button className="custom-btn" onClick={() => history.push('/survey')}>
                 <AiFillThunderbolt className="thunder-icon" /> Know more
               </button>
             </div>

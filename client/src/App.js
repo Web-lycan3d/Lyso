@@ -9,7 +9,7 @@ import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 
 const Landing = lazy(() => import("./pages/landing/Landing"));
-const About = lazy(() => import("./pages/landing/Landing"));
+const About = lazy(() => import("./pages/about/about.component"));
 const Contact = lazy(() => import("./pages/contact/contact.component"));
 const Sector = lazy(() => import("./pages/sector/Sector"));
 const Terrain = lazy(() => import("./pages/Terrain/Terrain"));

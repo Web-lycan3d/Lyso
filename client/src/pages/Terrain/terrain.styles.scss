@@ -14,27 +14,29 @@
 .terrain-header {
   width: 100%;
 
-  padding: 11% 0;
+  padding: 5% 0;
   display: flex;
   justify-content: space-around;
   flex-direction: row-reverse;
   align-items: center;
   .terrain-img {
-    width: 500px;
-    height: 500px;
+    width: 45%;
+    height: auto;
+    object-fit:cover;
   }
   .terrain-mobile-img {
     display: none;
   }
   .terrain-header-details {
-    width: 45rem;
+    width: 45%;
     position: relative;
-    bottom: 2rem;
     h2 {
       margin-top: 0;
       font-size: 3.5rem;
       font-weight: 300;
       margin-bottom: 0;
+      font-family: "Archivo" , sans-serif;
+      letter-spacing:1.3rem;
       b {
         margin-top: 0;
         position: relative;
@@ -45,7 +47,9 @@
       padding-right: 0.9rem;
       font-size: 1.05rem;
       line-height: 1.9;
+      font-family: "Archivo" , sans-serif;
       margin-top: 0.8rem;
+      letter-spacing:2px;
     }
     .custom-btn {
       margin-top: 1.5rem;
@@ -54,10 +58,11 @@
 }
 .terrain-body {
   width: 90%;
-  padding: 5% 0;
+  padding: 2% 0;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   left: 3%;
   img {
@@ -66,10 +71,10 @@
   }
   .terrain-body-text {
     width: 100%;
-    margin: 2rem 1rem 0;
+    margin: 0rem 1rem 0;
 
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: #2269e9;
       font-weight: 500;
       margin-bottom: 1.2rem;
@@ -79,7 +84,7 @@
       margin: 1rem 0;
       display: block;
 
-      font-size: 1.02rem;
+      font-size: 1.2rem;
     }
     span:nth-child(4) {
       color: #2268e9d0;
@@ -88,7 +93,7 @@
 }
 .terrain-footer {
   width: 100%;
-  margin: 8% auto;
+  margin: 4% auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,7 +145,7 @@
       flex-direction: column;
 
       .upload-icon {
-        font-size: 5rem;
+        font-size: 10rem;
         color: #000000;
       }
       p {
@@ -205,12 +210,11 @@
       font-family: "Poppins", sans-serif;
       padding: 0.35rem 1rem;
       width: 7.5rem;
-      background-color: #1d1d1def;
+      background: linear-gradient(107deg , #60B9F2 , #2269E9);
       border: 0;
       outline: 0;
       border-radius: 18px;
       color: white;
-      border: 2px solid #1b1b1bef;
       cursor: pointer;
       &:hover {
         background: transparent;
@@ -351,13 +355,15 @@
         text-align: left;
         width: 95%;
         margin: 1.5rem auto;
+        font-size: 0.9rem;
       }
     }
   }
 
   .terrain-footer {
-    padding-top: 0;
+    padding: 0 1rem;
     margin-top: 0rem;
+    width: 95%;
     form {
       flex-direction: column;
       img {
