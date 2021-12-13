@@ -90,15 +90,15 @@ const Sector = (props) => {
               <h3>Benifits</h3>
               <div className="sector-details-flex">
                 <div className="sector-detail-p">
-                  {secletedItem?.details?.map(
-                    (data, index) =>
-                      index < 3 && <p key={index}>{data.desp} </p>
-                  )}
+                  {secletedItem?.details?.map((data, index) => (
+                    <p key={index}>{data.desp} </p>
+                  ))}
                 </div>
-                <div className="sector-detail-p">
+                {/* <div className="sector-detail-p">
                   {secletedItem?.details?.map(
                     (data, index) =>
-                      index >= 3 && index < 6 && <p key={index}>{data.desp} </p>
+                      index >= 3 &&
+                      index <= 6 && <p key={index}>{data.desp} </p>
                   )}
                 </div>
                 <div className="sector-detail-p">
@@ -106,7 +106,7 @@ const Sector = (props) => {
                     (data, index) =>
                       index >= 6 && <p key={index}>{data.desp} </p>
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

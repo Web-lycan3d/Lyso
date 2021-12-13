@@ -134,7 +134,7 @@ export const Sectors = [
         allDetails:
           "Compared to other sectors the construction industry has been slow in embracing new digital technologies even though the long-term benefits are significant. It is time for disruption and the use of drones are key to this, Our drones provide construction companies with expansive accurate and precise spatial data. The data obtained through our drones can be analysed with an engineering software and furthermore can be overlaid on construction drawings. The data captured via each flight is processed through a photogrammetry software which is then used to create digital elevation models (DEMs) orthophotos and 3D point clouds.",
         application:
-          "Our drones are primarily used in the oil and gas industry for remote monitoring and surveillance. This covers infrastructure, equipment, tankers and trucks and other assets. Drones can provide a 360-degree view for monitoring field operations. Remote monitoring using drones is also enabling oil and gas companies to inspect unmanned production platforms Our drones can be customised to include ultrasonic sensors and visual inspection technologies, such as cameras and thermal imagers These are used for carrying out a close-range nondestructive inspection of oil and gas assets to detect flaws or defects, Accurate 3D scanned models combined with high definition interior & exterior photographs help with structural maintenance of cooling towers and chimneys. The overall plant layout, and the efficient placement of pipelines and electric corridors can also be designed in a well-planned manner with the help of Multispectral and Digital Elevation Maps.",
+          "Our drones are mainly used in the construction industry for surveying and inspection purposes. Drones are equipped with downward-facing sensors such as RGB multispectral thermal or LIDAR and they can capture a great deal of aerial data in a short time., During an aerial drone survey with an RGB camera the ground its features and buildings are photographed multiple times from different angles and each image is tagged with coordinates. First these highly detailed geotagged images can be used for assets and inspections for example, of building roofs or hard-to-reach areas. They can also be used to monitor areas across long distances such as vegetation rows roads and railroads., Our drones aid in calculating stockpile volume and material types for inventory. They also help in calculating length width and elevation for roads and structures as well as annotating images and maps for easier communication.",
         itemName: "Construction",
 
         bg: "https://i.ibb.co/kBtFssc/Group-9474.webp",
@@ -296,9 +296,7 @@ export const Sectors = [
       {
         desp: "Normalized Difference Red Edge (NDRE)",
       },
-      {
-        desp: "Orthomosaic Map",
-      },
+
       {
         desp: "Orthomosaic Map",
       },

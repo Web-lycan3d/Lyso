@@ -13,14 +13,15 @@
   overflow-x: hidden;
 }
 .sel-header {
+  width: 100%;
   min-height: 100vh;
-
+  background-size: cover;
   position: relative;
   display: flex;
   justify-content: flex-end;
 }
 .sel-h2 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   margin-bottom: 0.9rem;
   font-weight: 600;
 }
@@ -34,32 +35,35 @@
   justify-content: center;
 
   flex-direction: column;
-  padding-top: 5%;
+
+  padding-top: 6%;
   padding-left: 3%;
   color: white;
   .sel-h2 {
-    margin-top: 8%;
+    margin-top: 3rem;
   }
   p {
     margin-top: 0.8rem;
     width: 90%;
     margin-bottom: 0;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 300;
-    line-height: 2.1;
+    line-height: 1.8;
     letter-spacing: 0.7px;
     opacity: 0.9;
+    font-family: "Archivo", sans-serif;
   }
   .sel-sector-service {
     width: 100%;
     height: 100%;
-    padding-top: 5%;
-
+    margin-top: 4rem;
     position: relative;
-    top: 1rem;
+    bottom: 2rem;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+
+    align-items: flex-end;
     .sel-s-box {
       display: flex;
       flex-direction: column;
@@ -124,6 +128,8 @@
     padding-right: 0.9rem;
     line-height: 2.2;
     margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-family: "Archivo", sans-serif;
   }
 }
 .sel-sector-img {
@@ -248,7 +254,7 @@
       padding-left: 0.6rem;
       width: 95%;
       margin-top: 0.1rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     .sel-sector-service-desk {
       display: none;
@@ -256,6 +262,11 @@
   }
   .sel-list-body {
     display: flex;
+    .sel-list-box {
+      .list-span {
+        font-size: 0.9rem;
+      }
+    }
   }
   .sel-body {
     padding: 5% 6% 2%;
@@ -269,7 +280,7 @@
       }
       span {
         width: 100%;
-        font-size: 0.95rem;
+        font-size: 1rem;
       }
     }
     .sel-sector-img {
@@ -283,13 +294,29 @@
         text-align: center;
         margin: 0;
         margin-bottom: 2rem;
-        font-size: 2.3rem;
+        font-size: 2rem;
       }
     }
   }
   .sel-footer {
     .sel-f-items {
-      flex-wrap: nowrap;
+      height: 20rem;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(148, 121, 121, 0.315);
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
       .sel-f-item-align {
         margin-right: 0.8rem;
         p {
@@ -306,10 +333,47 @@
     }
   }
 }
+@media screen and (max-width: 1550px) {
+  .sel-header-details {
+    p {
+      width: 97%;
+    }
+    p:nth-child(1) {
+      margin-top: 0.2rem;
+    }
+    .sel-sector-service {
+      width: 100%;
+      .sel-s-box {
+        margin: 0 1rem;
+        margin-left: 0;
+      }
+      img {
+        width: 120px;
+      }
+      .list-span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
 @media screen and (max-width: 720px) {
   .sel-header-details {
     position: relative;
     top: 0;
+  }
+  .sel-body {
+    .sel-sector-img {
+      .mobile-h2 {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  .sel-footer {
+    .sel-f-items {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+    }
   }
 }
 
@@ -328,9 +392,17 @@
     }
     p {
       width: 95%;
-      margin-top: 0.1rem;
-      font-size: 0.85rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
       padding-right: 0.3rem;
+    }
+    p:nth-child(1) {
+      margin-top: 0rem;
+    }
+  }
+  .sel-footer {
+    .sel-h2 {
+      font-size: 1.8rem;
     }
   }
 }
@@ -342,7 +414,6 @@
   }
   .sel-footer {
     .sel-f-items {
-      flex-wrap: wrap;
       .sel-f-item-align {
         margin-right: 0.8rem;
         p {

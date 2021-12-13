@@ -58,7 +58,13 @@ const Selectedsector = () => {
           <div
             className="sel-header"
             style={{
-              background: `url(${secletedType?.mainBg}) no-repeat center`,
+              backgroundImage: `url(${secletedType?.mainBg})`,
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+              backgroundAttachment: "initial",
+              backgroundOrigin: "initial",
+              backgroundClip: "initial",
+              backgroundColor: "initial",
             }}>
             <div className="sel-header-img">
               <img src="" alt="" />
@@ -112,7 +118,7 @@ const Selectedsector = () => {
                 {secletedItem?.details?.map(
                   (data, index) =>
                     index >= 3 &&
-                    index <= 6 && (
+                    index < 6 && (
                       <div className="sel-f-item" key={index}>
                         <p>{data.desp} </p>{" "}
                       </div>
@@ -123,7 +129,18 @@ const Selectedsector = () => {
                 {secletedItem?.details?.map(
                   (data, index) =>
                     index >= 6 &&
-                    index <= 9 && (
+                    index < 9 && (
+                      <div className="sel-f-item" key={index}>
+                        <p>{data.desp} </p>{" "}
+                      </div>
+                    )
+                )}
+              </div>{" "}
+              <div className="sel-f-item-align">
+                {secletedItem?.details?.map(
+                  (data, index) =>
+                    index >= 9 &&
+                    index <= 12 && (
                       <div className="sel-f-item" key={index}>
                         <p>{data.desp} </p>{" "}
                       </div>
