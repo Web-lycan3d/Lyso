@@ -24,12 +24,13 @@
   font-size: 2.6rem;
   margin-bottom: 0.9rem;
   font-weight: 600;
+  font-family: "Archivo", sans-serif;
 }
 .sel-header-details {
   width: 50%;
   min-height: 100%;
 
-  background-color: rgba(2, 2, 2, 0.445);
+  background-color: rgba(2, 2, 2, 0.514);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
@@ -49,8 +50,9 @@
     font-size: 1.2rem;
     font-weight: 300;
     line-height: 1.8;
-    letter-spacing: 0.7px;
+
     opacity: 0.9;
+    letter-spacing: 1px;
     font-family: "Archivo", sans-serif;
   }
   .sel-sector-service {
@@ -62,7 +64,7 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-
+    font-family: "Archivo", sans-serif;
     align-items: flex-end;
     .sel-s-box {
       display: flex;
@@ -76,7 +78,9 @@
       .list-span {
         position: relative;
         bottom: 2rem;
+        font-weight: 400;
         color: white;
+        letter-spacing: 0.75px;
       }
     }
     .sel-s-box:nth-child(1) {
@@ -128,7 +132,9 @@
     padding-right: 0.9rem;
     line-height: 2.2;
     margin-top: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.12rem;
+    font-weight: 400;
+    letter-spacing: 1.25px;
     font-family: "Archivo", sans-serif;
   }
 }
@@ -168,6 +174,7 @@
         margin: 0.85rem 0;
         font-size: 1.4rem;
         font-weight: 600;
+        font-family: "Archivo", sans-serif;
       }
     }
     .sel-f-item {

@@ -37,13 +37,14 @@
 
     p {
       padding: 0 0.6rem;
-
+      font-weight: 500;
       width: 92%;
       font-size: 1.15rem;
       line-height: 1.8;
       font-family: "Archivo", sans-serif;
 
       span {
+        font-weight: 500;
         color: #466aff;
         font-size: 1.15rem;
         letter-spacing: 0;
@@ -91,20 +92,27 @@
   width: 100%;
   padding: 8% 0 0%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
   img {
-    width: 50%;
-    height: auto;
+    width: 750px;
+    height: 100%;
     object-fit: cover;
+    position: relative;
+    right: 2rem;
   }
   p {
-    font-size: 1.15rem;
+    position: relative;
+    bottom: 3rem;
+    right: 2rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     font-family: "Archivo", sans-serif;
     color: #000;
-    width: 30%;
+    width: 30rem;
+    font-weight: 500;
+    letter-spacing: 1.25px;
   }
 }
 
@@ -416,10 +424,14 @@
     img {
       width: 100%;
       height: 70%;
+      bottom: 0;
+      right: 0;
     }
     p {
       margin-top: 0;
       width: 80%;
+      bottom: 0;
+      right: 0;
     }
   }
   .data-second-container {
@@ -470,12 +482,13 @@
 @media screen and (max-width: 550px) {
   .data-first-container {
     .data-pro-content {
+      width: 95%;
       span {
         width: 100%;
         font-size: 1.7rem;
       }
       p {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
       }
       .btn {
         margin-top: 20px;
