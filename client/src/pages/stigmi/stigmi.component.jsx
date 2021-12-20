@@ -22,11 +22,10 @@ const Stigmi = () => {
                 <span>Real Time Survey Data Processing Using Our Proprietary AI/ML Systems</span>
             </div>
             <div className="stigmi-3cont">
-                <img src="https://i.ibb.co/fCgSqzb/Group-9471-min.png" alt="" />
+                <img src="https://i.ibb.co/31dPYR7/STIGMI-min.png" alt="" />
                 <div className="stigmi-3cont-content">
                     <h1>STIGMI</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas assumenda ea perferendis quisquam dolore modi voluptatum odio. Omnis, similique ut?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt adipisci quia vero ad non. Adipisci non reprehenderit sequi autem vel?</p>
+                    <p>Utilizing our platform, you can quickly and easily upload your data to an automated cloud data processing service that takes advantage of Artificial Intelligence (AI) and Machine Learning (ML) to perform tasks and process the required information in real-time with instantaneous results.</p>
                 </div>
             </div>
         </Fragment>
