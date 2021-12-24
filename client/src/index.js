@@ -1,11 +1,11 @@
 /** @format */
-
+require("dotenv").config();
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-require("dotenv").config();
+
 
 ReactDOM.render(
   <BrowserRouter>
