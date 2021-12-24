@@ -31,13 +31,13 @@ const LandingBody = () => {
           />   <Landindbodyimg
             text="infrastructure"
             src="https://i.ibb.co/TkKWyDQ/jared-murray-NSuufgf-BME-unsplash-min-1.webp"
-            path="/sector/5?type=Security"
+            path="/sector/4?type=Construction"
             bodyText="In the infrastructure sector, drones are predominantly used for surveying and inspection. Companies that build and manage large infrastructure have considerable potential to use drone data to optimize their operations. Information collected from our drones provides accurate details of the exact situation and alignment of infrastructure and can save a great deal of time."
           />
           <Landindbodyimg
             text="Surveilance"
             src="https://i.ibb.co/NrF7Mr2/daniel-bernard-s67-PZz8-Xt3c-unsplash-1-min-1.webp"
-            path="/sector/4?type=Construction"
+            path="/sector/5?type=Security"
             bodyText="Through advanced imaging technology, drone surveillance is used to capture still images and video to gather information about specific targets that could include people, buildings and homes, terrain and even small objects. Our drones present a much easier, faster, and cheaper method of image and data collection and have a number of other key advantages over traditional surveillance."
           />
        
