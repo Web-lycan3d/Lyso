@@ -140,11 +140,11 @@ const Contact = () => {
           <div className="contact-details">
             <div className="contact-content">
               <span>EMAIL US</span>
-              <p>Contactus@lyso.in</p>
+              <p>Contactus@Lyso.in</p>
             </div>
             <div className="contact-content">
               <span>PHONE NO.</span>
-              <p>+91 9591807979/7795194375</p>
+              <p>+91 9591807979</p>
             </div>
           </div>
         </div>
